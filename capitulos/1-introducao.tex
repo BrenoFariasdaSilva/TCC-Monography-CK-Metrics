@@ -15,29 +15,29 @@ OBS: Uso aspas ao colocar o nome de um livro ou coisa do tipo?
 
 No cenário atual da computação, os \gls{sds} desempenham um papel fundamental, alimentando a infraestrutura de serviços e aplicações que impulsionam nosso mundo digital. De acordo com Andrew Tanenbaum, um \gls{sd} é definido como "um conjunto de computadores independentes que se apresenta a seus usuários como um sistema único e coerente" \cite{TanenbaumDistributedSystemsThirdEdition}(p. 968). Diante disso, emergem desafios inerentes devido à necessidade de apresentar o sistema ao usuário como uma entidade homogênea embora, intrinsicamente, o sistema seja constituído por diversas partes heterogêneas. A heterogeneidade, como destacada em \textit{Distributed Systems: Concepts and Design} \cite{DistributedSystemsCoulouris}, abrange diversos aspectos, incluindo variações em termos de rede, hardware, sistemas operacionais, linguagens de programação e implementações realizadas por diferentes desenvolvedores.
 
-A complexidade inerente aos \gls{sds} os torna um campo desafiador, mas ao mesmo tempo, altamente relevante na computação moderna. Compreender e lidar com essa heterogeneidade e complexidade é essencial para o desenvolvimento, manutenção e escalabilidade de \gls{sd}. Além disso, a crescente dependência desses sistemas em nossa sociedade digital torna o estudo de \gls{sds} fundamental para a formação de profissionais capacitados e para o avanço da qualidade do ensino em Engenharia de Software. É nesse contexto que a investigação sobre a evolução do código em \gls{sd} se destaca, proporcionando uma visão valiosa sobre como esses sistemas complexos evoluem para atender às demandas em constante mudança da era digital.
+A complexidade inerente aos \gls{sds} os torna um campo desafiador, mas ao mesmo tempo, altamente relevante na computação moderna. Compreender e lidar com essa heterogeneidade e complexidade é essencial para o desenvolvimento, manutenção e escalabilidade de \gls{sd}. Além disso, a crescente dependência desses sistemas em nossa sociedade digital torna o estudo de \gls{sds} fundamental para a formação de profissionais capacitados e para o avanço da qualidade do ensino em \gls{es}. É nesse contexto que a investigação sobre a evolução do código em \gls{sd} se destaca, proporcionando uma visão valiosa sobre como esses sistemas complexos evoluem para atender às demandas em constante mudança da era digital.
 
 \section{Objetivos}\label{sec:objetivos}
 \subsection{Objetivo geral}\label{subsec:objetivoGeral}
- Neste contexto, o objetivo geral desta monografia é desenvolver uma heurística para identificar exemplos de código-fonte representativos da evolução de \gls{sds} por meio da análise de métricas de código usadas na Engenharia de Software. Essa heurística será projetada para auxiliar na seleção de exemplos trabalhados que demonstrem como o código em \gls{sds} se adapta e evolui ao longo do tempo. Uma vez conquistada a heurística almejada, objetiva-se analisar um exemplo trabalhado, com a finalidade de compreender por que um código específico atende às métricas de código desejadas no âmbito do desenvolvimento de software.
+ Neste contexto, o objetivo geral desta monografia é desenvolver uma heurística para identificar exemplos de código-fonte representativos da evolução de \gls{sds} por meio da análise de métricas de código usadas na \gls{es}. Essa heurística será projetada para auxiliar na seleção de exemplos trabalhados que demonstrem como o código em \gls{sds} se adapta e evolui ao longo do tempo. Uma vez conquistada a heurística almejada, objetiva-se analisar um exemplo trabalhado, com a finalidade de compreender por que um código específico atende às métricas de código desejadas no âmbito do desenvolvimento de software.
 
 \subsection{Objetivos específicos}\label{subsec:objetivosEspecificos}
 \begin{itemize}
-    \item Realizar uma revisão da literatura abrangente.
-    \item Definir métricas de código relevantes.
-    \item Escolher repositório(s) open-source apropriado(s) relacionado(s) à area de \gls{sd}.
-    \item Desenvolver uma heurística de seleção.
-    \item Selecionar exemplos de código trabalhados.
-    \item Avaliar a utilidade educacional.
-    \item Documentar a análise da evolução de código.
-    \item Contribuir para a formação e prática em Engenharia de Software.
+    \item Realizar uma revisão da literatura abrangente, explorando estudos relevantes em \gls{sds} e métricas de código em \gls{es}.
+    \item Definir métricas de código específicas e relevantes que são apropriadas para avaliar a evolução de código em \gls{sds}, considerando as melhores práticas da área.
+    \item Escolher um ou mais repositórios open-source pertinentes à área de \gls{sds} que servirão como fonte de exemplos de código para análise.
+    \item Desenvolver uma heurística de seleção que possa analisar as métricas de código e identificar exemplos de código-fonte que representem eficazmente a evolução em \gls{sds} ao longo do tempo.
+    \item Selecionar exemplos específicos de código trabalhados nos repositórios escolhidos, aplicando a heurística desenvolvida e justificando a seleção com base em métricas de código.
+    \item Avaliar a utilidade educacional dos exemplos de código selecionados, usando-os em um contexto de ensino e documentando os resultados obtidos no processo.
+    \item Documentar a análise da evolução de código realizada nos exemplos escolhidos, identificando padrões, desafios comuns e práticas recomendadas.
+    \item Contribuir para a formação e boas práticas de código em \gls{es}, compartilhando as descobertas e insights obtidos ao longo da pesquisa.
 \end{itemize}
 
 \section{Justificativa}\label{sec:justificativa}
 OBS: Justificativa em cima do seu objetivo.
 Explicar que o resultado vai servir para ser usado em sala de aula para contrinbuir para o enriquecimento da universidade.
 
-A complexidade e heterogeneidade inerentes aos \gls{sds} estabelecem desafios significativos para o desenvolvimento, manutenção e escalabilidade desses sistemas. Compreender e abordar essas complexidades é crucial, dada a dependência crescente dos \gls{sds} em nossa sociedade digital. A dependência abrange desde redes sociais até sistemas de transporte, saúde e muito mais. Portanto, a formação de estudantes e profissionais em Engenharia de Software, com foco nos \gls{sds}, torna-se uma necessidade premente para atender à demanda crescente por profissionais qualificados nesse campo.
+A complexidade e heterogeneidade inerentes aos \gls{sds} estabelecem desafios significativos para o desenvolvimento, manutenção e escalabilidade desses sistemas. Compreender e abordar essas complexidades é crucial, dada a dependência crescente dos \gls{sds} em nossa sociedade digital. A dependência abrange desde redes sociais até sistemas de transporte, saúde e muito mais. Portanto, a formação de estudantes e profissionais em \gls{es}, com foco nos \gls{sds}, torna-se uma necessidade premente para atender à demanda crescente por profissionais qualificados nesse campo.
 É nesse contexto que a investigação sobre a evolução do código em \gls{sds} assume destaque. O estudo visa proporcionar uma compreensão mais profunda de como o código-fonte em \gls{sds} se adapta ao longo do tempo para atender às demandas da era digital em constante evolução.
 
 \section{Estrutura do trabalho}\label{sec:estruturaTrabalho}
