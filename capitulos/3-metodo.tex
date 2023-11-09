@@ -23,7 +23,18 @@ A biblioteca PyDriller \cite{PyDrillerSpadini2018} é um recurso essencial para 
 OBS: Pedir ajuda com a repetição da palavra "código".
 
 \section{Repositórios}\label{sec:repositorios}
-Falar do Kafka e do Zookeeper, explicar cada um deles e justificar a escolha desses SDs.
+O Apache Kafka \cite{KafkaGitHub} é um sistema de mensagens distribuídas, baseado no modelo \textit{publish-subscribe}, que desempenha um papel fundamental na infraestrutura de processamento de eventos em tempo real. Conforme o artigo "Apache Kafka: Next Generation Distributed Messaging System" \cite{ApacheKafkaNextGenerationDistributedMessagingSystem:2010}, o Kafka é projetado para lidar com fluxos de dados em grande escala, permitindo que organizações processem, armazenem e transmitam dados de maneira eficiente, o qual opera em um modelo de log distribuído, no qual as mensagens são registradas em logs (ou tópicos) que podem ser divididos em partições. 
+A estrutura do Apache Kafka é composta por vários componentes, incluindo:
+
+\begin{itemize}
+  \item \textbf{Produtores}: São responsáveis por publicar mensagens em tópicos do Kafka.
+  \item \textbf{Tópicos}: São canais de mensagens nos quais os dados são publicados e armazenados.
+  \item \textbf{Partições}: Os tópicos podem ser divididos em partições para permitir a distribuição e o processamento paralelo de mensagens.
+  \item \textbf{Corretores (Brokers)}: São servidores que armazenam e distribuem as mensagens. Eles desempenham um papel central na arquitetura do Kafka.
+  \item \textbf{Consumidores}: São aplicativos que se inscrevem nos tópicos para receber mensagens e processá-las.
+  \item \textbf{ZooKeeper (KRaft em 2023)}: No passado, o Kafka dependia do Apache ZooKeeper para gerenciamento de metadados e coordenação. No entanto, em 2023, o Kafka adotou o KRaft como substituto, eliminando a dependência do ZooKeeper, com o intuito de deixá-lo mais simples e robusto.
+\end{itemize}
+Isso permite a escalabilidade, tolerância a falhas e a distribuição das mensagens em várias máquinas e servidores, tornando-o uma escolha popular em empresas como LinkedIn, Twitter, Foursquare, entre outros para a construção de pipelines de dados em tempo real e sistemas de processamento de eventos.
 
 \section{Métodos}\label{sec:metodo}
 
