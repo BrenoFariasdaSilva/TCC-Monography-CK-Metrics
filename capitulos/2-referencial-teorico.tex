@@ -6,11 +6,18 @@
 \chapter{Referencial teórico}
 \label{cap:referencialTeorico}
 
-
 \section{Fundamentação teórica}
 \label{section:background}
-Falar sobre \gls{sds} usando o \cite{DistributedSystemsCoulouris} como base.
 
+Um \gls{sd} é um conjunto de computadores independentes que se apresenta a seus usuários como um sistema único e coerente. A motivação para o desenvolvimento de \gls{sds} é impulsionada pela necessidade de melhorar a eficiência na utilização de recursos computacionais, possibilitando o compartilhamento de carga de trabalho, oferecendo suporte a aplicações multitarefa e fornecendo maior confiabilidade por meio da redundância de dados e serviços. A facilidade de acesso remoto a recursos também é uma motivação significativa, permitindo que usuários acessem informações e serviços independentemente da localização física dos recursos \cite{TanenbaumDistributedSystemsThirdEdition}.
+
+A implementação de \gls{sds} enfrenta diversos desafios, sendo um deles a heterogeneidade, que se manifesta em diferentes níveis, como heterogeneidade de hardware, rede, linguagem de programação e implementações realizadas por diferentes desenvolvedores. Essa diversidade exige o uso de \textit{middlewares} para fornecer uma camada de abstração e facilitar a integração. A ausência de um relógio global em \gls{sds} introduz desafios na coordenação de eventos e sincronização entre diferentes partes do sistema. A tolerância a falhas é abordada por meio de técnicas como \textit{checksums} para detecção de erros, mascaramento de falhas usando retransmissão de dados, sem contar na ausência de \textit{rollback} para manter a consistência, mesmo diante de falhas \cite{DistributedSystemsCoulouris}.
+
+Para atingir escalabilidade, \gls{sds} empregam técnicas como replicação de dados, uso de cache distribuída, distribuição de carga entre múltiplos servidores e utilização de \textit{web proxies}, entre outros. No entanto, a escalabilidade também traz consigo desafios, como a necessidade de manter a consistência entre as réplicas de dados. Sendo assim, os \gls{sds} enfrentam trade-offs, destacando-se o Teorema \gls{cap}, que estabelece que é impossível garantir fortemente de forma simultânea os três aspectos (Consistência, Disponibilidade e Tolerância a partição) em um \gls{sd} \cite{TwentyYearsLaterEricBrewer2012}.
+
+A troca de mensagens \gls{ipc} é essencial em \gls{sds}, podendo ocorrer de forma síncrona ou assíncrona, além de ser classificada como bloqueante ou não bloqueante, dependendo do comportamento desejado. Do mesmo modo, a questão da coordenação e do acordo também são fundamentais, com técnicas como eleição, protocolos de consenso e algoritmos de ordenação de eventos, muitas vezes baseada em relações \textit{happened-before}, desempenham papéis cruciais na operação confiável de \gls{sds} \cite{DistributedSystemsCoulouris}.
+
+Em resumo, o desenvolvimento de \gls{sds} é desafiador, abrangendo questões como heterogeneidade, desempenho, segurança, tolerância à falhas, escalabilidade e comunicação eficiente entre processos. A complexidade desses desafios destaca a importância da \gls{es} na busca por soluções melhores. Ao analisar a evolução do código em \gls{sds} por meio de estudos de casos, a \gls{es} pode extrair \textit{insights} valiosos para a aplicação prática de conceitos teóricos e estratégias de resolução de problemas. A utilização de \gls{sds} como cenário de estudo oferece uma base sólida para construir exemplos trabalhados, enriquecendo o ensino em \gls{es}. A interseção entre os desafios de \gls{sds} e os princípios da \gls{es} cria uma oportunidade única para desenvolver materiais de ensino que promovam uma compreensão aprofundada, preparando os estudantes para enfrentar as complexidades do desenvolvimento de software.
 
 \subsection{Exemplos trabalhados}
 
