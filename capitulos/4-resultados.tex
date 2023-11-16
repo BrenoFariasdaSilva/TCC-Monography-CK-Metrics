@@ -6,14 +6,21 @@
 
 % Critérios de seleção de repositórios.
 Os critérios para a seleção de repositórios foram determinados pelos seguintes fatores:
+
 \begin{itemize}
-    \item Ser um repositório Java, viabilizando a aplicação das métricas \gls{ck};
-    \item O repositório deve ser de código aberto (\textit{open-source}), hospedado em plataformas como o \textit{Github};
-    \item Ser um repositório ativamente mantido e atualizado;
-    \item Ser um repositório utilizado em aplicações do mundo real;  
+    \item \textbf{Ser um repositório Java:} Essencial para viabilizar a aplicação das métricas \gls{ck}.
+    \item \textbf{Ser de código aberto (\textit{open-source}):} A escolha por repositórios abertos, hospedados em plataformas como o \textit{Github}, visa garantir a transparência e acessibilidade do código-fonte.
+    \item \textbf{Ser ativamente mantido e atualizado:} A ativa manutenção é crucial para garantir que os repositórios estejam alinhados com as práticas e avanços mais recentes.
+    \item \textbf{Ser utilizado em aplicações do mundo real:} A seleção de repositórios empregados em contextos práticos proporciona uma análise mais relevante e aplicável às situações reais.
 \end{itemize}
 
-% Dessa forma, os repositórios escolhidos foram ..;, pelas seguintes razões ...
+Dessa forma, os repositórios escolhidos foram o Apache Kafka e o ZooKeeper. Essa escolha baseou-se no fato de ambos os repositórios serem projetos \textit{open-source} disponíveis na plataforma GitHub, onde ambos são mantidos e atualizados de forma ativa para serem utilizados em ambientes do mundo real. Além disso, esses projetos lidam com questões altamente relevantes em \gls{sds}.
+
+O ZooKeeper desempenha um papel fundamental na coordenação e gerenciamento de serviços distribuídos. Ele oferece um serviço de consenso altamente confiável para \gls{sds}, garantindo a consistência e a sincronização entre os nós. Essa funcionalidade é crucial para a implementação de serviços distribuídos confiáveis e escaláveis, tornando o ZooKeeper uma escolha valiosa para este estudo.
+
+Por outro lado, o Apache Kafka destaca-se no processamento de fluxos de dados distribuídos em larga escala. Ele fornece uma plataforma robusta para a transmissão eficiente de eventos entre diferentes componentes de um \gls{sd}. A capacidade do Kafka lidar com volumes massivos de dados em tempo real o torna uma solução amplamente adotada em ambientes que demandam alto desempenho e escalabilidade.
+
+Dessa forma, o ambos os repositórios tem muito a agregar em termos de implementação e evolução tanto para a área de \gls{sds} quanto para a \gls{es}. Assim, a escolha desses repositórios permite a análise da evolução do código em contextos práticos e desafiadores, contribuindo para uma compreensão mais abrangente das práticas de desenvolvimento em \gls{sds}.
 
 % Desenvolvimento da ferramenta.
 \section{Desenvolvimento da ferramenta}
