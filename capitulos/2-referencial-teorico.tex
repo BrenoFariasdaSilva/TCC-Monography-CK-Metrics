@@ -9,41 +9,54 @@
 \section{Fundamentação teórica}
 \label{section:background}
 
+% Conceito de um Sistema Distribuído.
 Um \gls{sd} é um conjunto de computadores independentes que se apresenta a seus usuários como um sistema único e coerente. A motivação para o desenvolvimento de \gls{sds} é impulsionada pela necessidade de melhorar a eficiência na utilização de recursos computacionais, possibilitando o compartilhamento de carga de trabalho, oferecendo suporte a aplicações multitarefa e fornecendo maior confiabilidade por meio da redundância de dados e serviços. A facilidade de acesso remoto a recursos também é uma motivação significativa, permitindo que usuários acessem informações e serviços independentemente da localização física dos recursos \cite{TanenbaumDistributedSystemsThirdEdition}.
 
+% Desafios em Sistemas Distribuídos.
 A implementação de \gls{sds} enfrenta diversos desafios, sendo um deles a heterogeneidade, que se manifesta em diferentes níveis, como heterogeneidade de hardware, rede, linguagem de programação e implementações realizadas por diferentes desenvolvedores. Essa diversidade exige o uso de \textit{middlewares} para fornecer uma camada de abstração e facilitar a integração. A ausência de um relógio global em \gls{sds} introduz desafios na coordenação de eventos e sincronização entre diferentes partes do sistema. A tolerância a falhas é abordada por meio de técnicas como \textit{checksums} para detecção de erros, mascaramento de falhas usando retransmissão de dados, sem contar na ausência de \textit{rollback} para manter a consistência, mesmo diante de falhas \cite{DistributedSystemsCoulouris}.
 
+% Desafios em Sistemas Distribuídos - Continuação.
 Para atingir escalabilidade, \gls{sds} empregam técnicas como replicação de dados, uso de cache distribuída, distribuição de carga entre múltiplos servidores e utilização de \textit{web proxies}, entre outros. No entanto, a escalabilidade também traz consigo desafios, como a necessidade de manter a consistência entre as réplicas de dados. Sendo assim, os \gls{sds} enfrentam trade-offs, destacando-se o Teorema \gls{cap}, que estabelece que é impossível garantir fortemente de forma simultânea os três aspectos (Consistência, Disponibilidade e Tolerância a partição) em um \gls{sd} \cite{TwentyYearsLaterEricBrewer2012}.
 
+% Desafios em Sistemas Distribuídos - Continuação.
 A troca de mensagens \gls{ipc} é essencial em \gls{sds}, podendo ocorrer de forma síncrona ou assíncrona, além de ser classificada como bloqueante ou não bloqueante, dependendo do comportamento desejado. Do mesmo modo, a questão da coordenação e do acordo também são fundamentais, com técnicas como eleição, protocolos de consenso e algoritmos de ordenação de eventos, muitas vezes baseada em relações \textit{happened-before}, desempenham papéis cruciais na operação confiável de \gls{sds} \cite{DistributedSystemsCoulouris}.
 
+% Desafios em Sistemas Distribuídos - Continuação.
+% Resumindo os desafios e vantagens de utilizar Sistemas Distribuídos como objeto de estudo na Engenharia de Software.
 Em resumo, o desenvolvimento de \gls{sds} é desafiador, abrangendo questões como heterogeneidade, desempenho, segurança, tolerância à falhas, escalabilidade e comunicação eficiente entre processos. A complexidade desses desafios destaca a importância da \gls{es} na busca por soluções melhores. Ao analisar a evolução do código em \gls{sds} por meio de estudos de casos, a \gls{es} pode extrair \textit{insights} valiosos para a aplicação prática de conceitos teóricos e estratégias de resolução de problemas. A utilização de \gls{sds} como cenário de estudo oferece uma base sólida para construir exemplos trabalhados, enriquecendo o ensino em \gls{es}. A interseção entre os desafios de \gls{sds} e os princípios da \gls{es} cria uma oportunidade única para desenvolver materiais de ensino que promovam uma compreensão aprofundada, preparando os estudantes para enfrentar as complexidades do desenvolvimento de software.
 
 \subsection{Exemplos trabalhados}
 
-% Definição de exemplo trabalhado
+% Definição de exemplo trabalhado.
 A definição de exemplo trabalhado encontra-se claramente difundida na literatura, passível de ser compreendido como um trabalho cognitivo e experimental com o intuito de fornecer uma solução ideal, todavia próxima ao praticável, para um problema específico, no qual uma pessoa com escasso ou nenhum conhecimento acerca do tema possa examinar e aprender com a solução proposta. Sendo assim, o desenvolvimento e estudo de exemplos trabalhados enriquecem a qualidade do que é lecionado em sala de aula, uma vez que a solução ideal pode representar muito bem o estado da arte para um determinado tópico, visto que dissemina conceitos e padrões do problema apresentado \cite{Robert.Atkinson-etal:2000}.
 
+% Conceitos sobre o uso de exemplos trabalhados em sala de aula.
 Conforme exposto no artigo {``Learning from Examples - Instructional Principles from the Worked Examples Research'' \cite{Robert.Atkinson-etal:2000}, os elementos essenciais na elaboração de um exemplo trabalhado de alta qualidade estão intrinsecamente vinculados aos conceitos de \textit{``inter-example feature''} e \textit{``intra-example feature''}. A concepção do termo \textit{``inter-example feature''} destaca a importância de fornecer uma diversidade de exemplos que ilustrem estratégias múltiplas para problemas similares, porém de tipos diferentes, enquanto o termo \textit{``intra-example feature''} insinua características intrínsecas à estrutura interna de cada exemplo. 
 
-% Definição de exemplo trabalhado em educação em computação
+% Definição de exemplo trabalhado em educação em computação.
 O artigo intitulado ``Worked Examples in Computer Science'' \cite{Skudder-LuxtonReilly:2014} destaca a escassez de pesquisas sobre exemplos trabalhados na área da Ciência da Computação. Isso é evidenciado pelo fato de que apenas uma minoria das referências citadas no artigo aborda efetivamente exemplos trabalhados relacionados à Ciência da Computação, uma vez que as tarefas de programação requerem um alto teor cognitivo. Além disso, na presente pesquisa, o autor investiga as ramificações de exemplos trabalhados na área da Computação, frequentemente manifestados na apresentação passo a passo da execução de um código específico, prática recorrente em disciplinas como análise de algoritmos. Adicionalmente, o estudo explora o emprego do conceito de ``problem solution pair'', no qual um problema é apresentado, estimulando o aluno a tentar resolvê-lo, seguido pela exposição da solução correspondente. Por fim, de maneira menos convencional, são utilizadas técnicas de desenvolvimento de software enquanto se leciona um conteúdo, o que contribui para esclarecer o raciocínio empregado na elaboração da solução para o problema.
 
+% Estratégias de uso de exemplos trabalhados em sala de aula.
 A exposição dos alunos a um determinado conteúdo, como já vista, pode ser feita pelo uso de exemplos trabalhados, o qual diminui a carga cognitiva necessária para compreensão de um determinado tópico \cite{Robert.Atkinson-etal:2000}, todavia o uso de \textit{``Faded worked examples''} é uma estratégia de ensino que apresenta exemplos de problemas resolvidos aos alunos de forma gradual. Inicialmente, fornece-se um exemplo completamente resolvido para garantir a compreensão total da solução. Em seguida, ao longo de problemas subsequentes, partes do exemplo resolvido são progressivamente removidas. Os alunos são desafiados a preencher as lacunas, completando as partes ausentes da solução, implicando em abster o discente de lidar com situações passivas e torna-se proficiente em resgatar informações no hipocampo do cérebro \cite{Skudder-LuxtonReilly:2014}.
 
+% Impacto do uso de exemplos trabalhados.
 O impacto dos exemplos trabalhados na aprendizagem varia conforme o nível de experiência do aprendiz. Para iniciantes, esses exemplos proveem benefícios ao frisar a atenção nos elementos cruciais do problema, facilitando a criação de esquemas de resolução pertinentes e otimizando recursos cognitivos em comparação com a abordagem direta na resolução de problemas. Em contraste, para indivíduos com certa experiência, os exemplos trabalhados podem tornar-se supérfluos, resultando em uma carga cognitiva extrínseca \cite{Skudder-LuxtonReilly:2014}.
 
-% Exemplos trabalhos para engenharia de software
+% Exemplos trabalhos para engenharia de software.
 No contexto contemporâneo, deparamo-nos com um desafio significativo associado à evolução incessante do conhecimento em domínios como Medicina, Física e, notavelmente, a Computação. Nesse contexto, disciplinas como (\gls{sd}) e (\gls{es}) apresentam desafios substanciais tanto para discentes quanto para docentes. Considerando a contribuição positiva do uso de exemplos trabalhados para a qualidade do ensino, torna-se imperativo analisar a perspectiva do educador. Pesquisas indicam que os pedagogos enfrentam obstáculos ao selecionar e desenvolver exemplos trabalhados, além de evidenciar a falta de pesquisa sobre exemplos trabalhados na \gls{es}. Acrescentando a isso, é importante ressaltar que apenas uma minoria dos professores faz uso de exemplos reais, apesar de quase a totalidade incorporar exemplos em suas práticas pedagógicas, conforme evidenciado por um \textit{survey} realizado no artigo intitulado ``Using Real Worked Examples to Aid Software Engineering Teaching'' \cite{Simone.Tonhao-etal:2021}.
 
+% Desafios em usar exemplos trabalhados em sala de aula.
 Ademais, ao abordar a exposição dos alunos a projetos \textit{open-source}, um dos principais desafios reside na seleção de projetos apropriados. Idealmente, um projeto ativo com múltiplos contribuidores externos seria uma escolha favorável. No entanto, o maior desafio reside em engajar o estudante para realizar uma contribuição significativa, uma vez que projetos reais demandam um nível técnico considerável \cite{OSSProjects-TheProfessors'Perspective}. Não suficiente, a forma em que o exemplo trabalhado é exposto também tem relevância, dessa forma a apresentação do exemplo trabalho por meio de uma gamificação também pode apresentar um impacto positivo no nível de engajamento dos discentes \cite{Simone.Tonhao-etal:2022}.
 
+% Estudo sobre vantagens do uso de exemplos trabalhados em sala de aula.
 Por meio de uma pesquisa exploratória, professores que nunca haviam utilizado \gls{abe}
 implementaram seu uso em uma aula sobre modelagem de diagramas de classe. A referida aula foi sucedida por um questionário que visava avaliar as percepções dos aprendizes em relação ao conteúdo apresentado. A análise qualitativa dos resultados teve como objetivo observar os aspectos benéficos e desafiadores desse experimento. Os resultados evidenciaram que a estratégia de \gls{abe} não apenas contribuiu significativamente para o grau de compreensão e retenção dos conceitos abordados, mas também facilitou uma maior conexão entre a teoria e a prática. Adicionalmente, o presente trabalho destacou, como perspectivas futuras, a necessidade de investigar o impacto dessas estratégias em outras áreas da \gls{es} \cite{Tiago.Bonetti-etal:2023}.
 
+% Métricas CK.
 \subsection{Métricas de software}
 O artigo ``A Metrics Suite for Object Oriented Design'' \cite{MetricsSuite} apresenta um conjunto de métricas para avaliação do design de código orientado a objetos, introduzindo métricas cruciais para compreender a complexidade e qualidade do código-fonte. Dentre elas, destacam-se o \gls{cbo}, \gls{rfc} e \gls{wmc}. Essas métricas fornecem compreensões valiosas sobre a estrutura e evolução de sistemas orientados a objetos, sendo essenciais para avaliações de qualidade de software. Além dessas métricas, o artigo define outras, como o \gls{dit}, \gls{noc} e \gls{lcom}, ampliando o conjunto de ferramentas disponíveis para a análise do design orientado a objetos. Neste contexto, exploraremos cada uma dessas métricas, destacando sua importância e contribuição para a avaliação de qualidade de software.
 
+% Explicação das Métricas CK.
 \begin{itemize}
     \item \textbf{\gls{cbo}}: Reflete o grau de acoplamento, ou seja, as dependências que uma classe específica possui, indicando a quantidade de classes diretamente associadas a essa classe, já que utiliza métodos dessas classes. Um valor elevado sugere maior complexidade e menor flexibilidade, pois mudanças na classe podem impactar várias outras, não suficiente, demasiado acoplamento diminui o grau de modularidade de uma classe. Observar uma redução no \gls{cbo} ao longo da evolução do código é um indicativo positivo de melhorias na qualidade do código.
     \item \textbf{\gls{cbom}}: Similar ao \gls{cbo}, entretanto, o \gls{cbom} considera a dependência de classes como uma referência a um objeto do mesmo tipo. Isso significa que, ao adicionar uma simples chamada de método da classe, a métrica é incrementada. No entanto, durante os estágios iniciais do estudo, o \gls{cbom} foi removido por poluir os valores, pois o escopo de refatorações nas métricas era menos restrito a refatorações da classe ou do método. É importante observar que essa métrica não faz parte do conjunto original do \gls{ck}, sendo introduzida devido a outra interpretação da métrica \gls{cbo}.
@@ -51,22 +64,29 @@ O artigo ``A Metrics Suite for Object Oriented Design'' \cite{MetricsSuite} apre
     \item \textbf{\gls{wmc}}: Simboliza a soma dos valores de complexidade dos métodos de uma classe específica. Um valor elevado indica que a classe pode ser complexa, com múltiplos métodos, implicando em um custo significativo para o desenvolvimento e manutenção. Além disso, a existência de vários métodos associados a uma classe sugere que ela pode ser menos genérica, sem mencionar o possível impacto nos filhos dessa classe.
 \end{itemize}
 
+% Contexto sobre Sistemas Distribuídos em sala de aula.
 \subsection{Educação em sistemas distribuídos}
-% Contexto sobre SDs em sala de aula.
 Para haver uma boa formação de um profissional na área de \gls{sds}, é necessário haver muita experiência, visto que é uma das áreas mais complexas. Para tal, a porta de entrada a esse assunto, normalmente, costuma ser na universidade. Dessa forma, o primeiro contato pode tanto fomentar interesse nos alunos, quanto desenvolver receio por ser uma disciplina com um alto nível de complexidade. De modo a atrair mais pesquisadores no meio dos \gls{sds}, a didática e os materiais utilizados em sala de aula devem ser adequados, pois, sendo a universidade a porta de entrada para muitos assuntos de pesquisa, o conteúdo lecionado deve ser correto e conforme o estado da arte. 
 
-% Artigo "Have We Reached Consensus? An Analysis of Distributed Systems Syllabi" \cite{HaveWeReachedConsensus}.
+% Estudo sobre Sistemas Distribuídos no âmbito educacional.
 Um estudo abrangente foi conduzido para analisar a grade de disciplinas de vários programas de Ciência da Computação, visando identificar os principais tópicos abordados em cursos de \gls{sds}. A análise desses dados revelou que conceitos fundamentais, como Processos e Threads, Replicação, Chamadas de Sistema, Controle de Concorrência, Tolerância a Falhas, Sincronização, Comunicação, entre outros, constituem os elementos-chave frequentemente lecionados em disciplinas de \gls{sds}. Além disso, a pesquisa abordou a questão das referências utilizadas na elaboração do conteúdo dos cursos, identificando que obras como ``Distributed Systems'' na edição de 2017, de Van Steen e Tanenbaum, e ``Distributed Systems: Concepts and Design'' na edição de 2011, de Coulouris, são fontes comuns amplamente utilizadas para explicar os princípios dos \gls{sds} \cite{HaveWeReachedConsensus}.
 
 \section{Trabalhos relacionados}
 \label{section:related-work}
 
+% Ferramenta para análise de Sistemas Distribuídos.
 O artigo ``DistFax: A Toolkit for Measuring Interprocess Communications and Quality of Distributed Systems'' \cite{DistFax} propõe a ferramenta \textit{DistFax} para a análise de métricas de \gls{ipc}, que demonstraram correlação com métricas de qualidade de software. Enquanto o estudo utiliza métricas \gls{ipc} dinâmicas, ou seja, geradas em tempo de execução, o nosso estudo emprega métricas de código estáticas, geradas apenas pela análise do código-fonte. Isso se deve à inadequação das métricas tradicionais para medir a qualidade das trocas de mensagens em \gls{sds}, pois eles não se baseiam em relações explícitas, analisam apenas um computador e não consideram o sistema em sua totalidade. Além disso, calcular essas métricas requer o uso de relações \textit{happened-before} que, como já explicado, são um desafio por não haver um relógio global.
 
+% Ferramenta para análise de Sistemas Distribuídos - Continuação.
+% Modelos gerados e métricas disponíveis.
 No mesmo contexto, dois modelos de \gls{ia} foram desenvolvidos: um modelo supervisionado (\textit{Bagging}) e um não supervisionado (\textit{K-Means}). No DistFax, foram utilizadas seis métricas de IPC (cinco de acoplamento e uma de coesão), correlacionadas com cinco métricas de qualidade. Observaram-se correlações positivas entre \gls{ccc} com o tempo de execução, \gls{rmc} e \gls{ccc} com a complexidade ciclomática, e \gls{ccc} com a área de ataque (do inglês, \textit{attack-surface}). Houve também uma correlação negativa entre \gls{ccl} e \gls{plc} com a área de ataque.
 
+% Ferramenta para análise de Sistemas Distribuídos - Continuação.
+% Conceito de Complexidade Ciclomática.
 A complexidade ciclomática, que representa a quantidade de caminhos distintos no código, pode ser interpretada como o número mínimo de casos de teste necessário para cobrir todos os caminhos do programa, servindo para garantir uma cobertura adequada durante os testes. Portanto, quanto menor a complexidade ciclomática, melhor.
 
+% Ferramenta para análise de Sistemas Distribuídos - Continuação.
+% Métricas de acoplamento.
 As métricas de acoplamento utilizadas no DistFax são:
 \begin{itemize}
     \item \textbf{\gls{rmc}}: Contagem de mensagens enviadas de um processo para outro.
@@ -76,6 +96,10 @@ As métricas de acoplamento utilizadas no DistFax são:
     \item \textbf{\gls{ccl}}: Avalia a carga de comunicação de uma classe individual com outras classes em todos os processos remotos.
 \end{itemize}
 
+% Ferramenta para análise de Sistemas Distribuídos - Continuação.
+% Métrica de coesão.
 A única métrica de coesão utilizada no DistFax foi \gls{plc}, que mede as conexões internas em um processo individual. Embora o uso dessas métricas seja benéfico, o custo computacional pode ser significativo para calcular todas elas em nosso estudo.
 
+% Ferramenta para análise de Sistemas Distribuídos - Continuação.
+% Correlação entre métricas e seus significados.
 A correlação positiva entre \gls{ccc} e o tempo de execução sugere que um elevado nível de acoplamento está correlacionado a um desempenho inferior. Portanto, nas métricas \gls{ck} adotadas em nossa pesquisa, reconhecemos que \gls{cbo} desempenha um papel crucial. Além disso, a correlação positiva entre \gls{ccc} e a área de ataque, em termos de segurança de software, indica que códigos com alto acoplamento são mais vulneráveis a potenciais pontos de ataque. Isso significa que um invasor pode explorar esses pontos para obter acesso não autorizado ou realizar ações prejudiciais. Esse fato reforça a importância da métrica \gls{cbo} como um indicador significativo da qualidade do código, especialmente no contexto da segurança do software.
