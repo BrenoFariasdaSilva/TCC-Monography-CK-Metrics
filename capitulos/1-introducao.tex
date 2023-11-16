@@ -18,13 +18,13 @@ Nos \gls{sds}, as preocupações com a segurança dos dados e da comunicação, 
 % Educação em Sistemas Distribuídos.
 Atualmente, a literatura não oferece estudos suficientes sobre educação em Sistemas Distribuídos. Uma análise do estudo intitulado ``Have We Reached Consensus? An Analysis of Distributed Systems Syllabi'' \cite{HaveWeReachedConsensus} destaca a falta de pesquisas atualizadas nesse campo. Esse estudo identificou que tópicos como Processos e Threads, Replicação, Chamadas de Sistema, Controle de Concorrência, Tolerância a Falhas, Sincronização, Comunicação, entre outros constituem os elementos-chave em cursos de \gls{sds}. No entanto, a carência de pesquisas recentes salienta a importância de investigar a evolução do código em \gls{sds}, especialmente com ênfase na educação, dada a relevância crítica desses sistemas na infraestrutura digital contemporânea.
 
-% Exemplo trabalhado de educação em Sistemas Distribuídos
+% Exemplo trabalhado de educação em Sistemas Distribuídos.
 https://ieeexplore.ieee.org/document/10132035
 
-% 
+% Exemplos trabalhados em Ciência da Computação.
 A eficácia do ensino em Ciência da Computação, particularmente no contexto de \gls{sds} e \gls{es}, está intrinsecamente ligada ao desenvolvimento e uso de exemplos trabalhados (do inglês, \textit{worked example}). Um exemplo trabalhado é uma ferramenta pedagógica poderosa, definida como um trabalho cognitivo e experimental que oferece uma solução ideal e praticável para um problema específico, permitindo que aprendizes examinem e aprendam com a solução proposta \cite{Robert.Atkinson-etal:2000}. A literatura destaca a importância dos exemplos trabalhados na disseminação de conceitos e padrões, fornecendo uma solução de estado da arte para um tópico específico. A falta de pesquisa dedicada aos exemplos trabalhados nesta área é evidente, e muitos professores enfrentam obstáculos ao incorporar exemplos reais em suas práticas pedagógicas \cite{Simone.Tonhao-etal:2021}.
 
-% .
+% Exemplos trabalhados na Engenharia de Software.
 No âmbito da \gls{es}, os exemplos trabalhados frequentemente assumem a forma de apresentação passo a passo da execução de códigos específicos. Esses exemplos, quando elaborados com alta qualidade, incorporam elementos essenciais como "\textit{inter-example feature}" e "\textit{intra-example feature}" \cite{Robert.Atkinson-etal:2000}. No entanto, pesquisas indicam a escassez de estudos específicos sobre exemplos trabalhados na Ciência da Computação, uma vez que tarefas de programação exigem alto teor cognitivo \cite{Skudder-LuxtonReilly:2014}. Além disso, estratégias como ``\textit{Faded Worked Examples}'', que envolvem a apresentação gradual de exemplos resolvidos, têm mostrado impacto significativo na aprendizagem, promovendo a abstração do aluno e desenvolvendo a capacidade de recuperar informações \cite{Skudder-LuxtonReilly:2014}.
 
 \section{Objetivos}\label{sec:objetivos}
@@ -41,20 +41,19 @@ No âmbito da \gls{es}, os exemplos trabalhados frequentemente assumem a forma d
 \end{itemize}
 
 \section{Justificativa}\label{sec:justificativa}
-% .
-A complexidade e heterogeneidade inerentes aos \gls{sds} estabelecem desafios significativos para o desenvolvimento, manutenção e escalabilidade desses sistemas. Compreender e abordar essas complexidades é crucial, dada a dependência crescente dos \gls{sds} em nossa sociedade digital. A dependência abrange desde redes sociais até sistemas de transporte, saúde e muito mais. Portanto, para conquistar uma boa formação de estudantes e profissionais na área da Computação, faz-se necessário o entendimento de \gls{es} e \gls{sds}, tornando-se uma necessidade iminente para atender à demanda crescente por profissionais qualificados nesse campo.
-É nesse contexto que a investigação sobre a evolução do código em \gls{sds} assume destaque. O estudo visa proporcionar uma compreensão mais profunda de como o código-fonte em \gls{sds} se adapta ao longo do tempo para atender às demandas da era digital em constante evolução.
+% Motivo de usar Sistemas Distribuídos como objeto de estudo.
+A complexidade e heterogeneidade inerentes aos \gls{sds} estabelecem desafios significativos para o desenvolvimento, manutenção e escalabilidade desses sistemas. Compreender e abordar essas complexidades é crucial, dada a dependência crescente dos \gls{sds} em nossa sociedade digital. A dependência abrange desde redes sociais até sistemas de transporte, saúde e muito mais. Portanto, para conquistar uma boa formação de estudantes e profissionais na área da Computação, faz-se necessário o entendimento de \gls{es} e \gls{sds}, tornando-se uma necessidade iminente para atender à demanda crescente por profissionais qualificados nesse campo. É nesse contexto que a investigação sobre a evolução do código em \gls{sds} assume destaque. O estudo visa proporcionar uma compreensão mais profunda de como o código-fonte em \gls{sds} se adapta ao longo do tempo para atender às demandas da era digital em constante evolução.
 
-% .
+% Objetivos do trabalho.
 Os objetivos traçados neste trabalho se alinham com a necessidade de abordar essas complexidades. O desenvolvimento de uma heurística para identificar exemplos de código-fonte representativos da evolução em \gls{sds} contribuirá para a formação de estudantes e profissionais em \gls{es}. Esses exemplos servirão como valiosos recursos de ensino e estudo, facilitando a compreensão das complexidades e desafios dos \gls{sds} em um ambiente distribuído e interconectado.
 
-% .
+% Justificativa Geral.
 Portanto, a justificativa para este estudo se baseia na importância crítica de compreender a evolução do código em \gls{sds}, contribuindo para a formação de profissionais mais capacitados e avançando a qualidade do ensino em \gls{es}. Este estudo procura preencher uma lacuna na literatura sobre a criação de exemplos trabalhados em \gls{sds} para ser objeto de estudo na \gls{es}, fornecendo percepções valiosas para o desenvolvimento e manutenção de \gls{sds} e aprimorando a prática profissional neste campo essencial da computação.
 
-% .
+% Lacuna na literatura.
 Os estudos existentes, como ``Students' Perception of Example-Based Learning in Software Modeling Education'' \cite{Tiago.Bonetti-etal:2023}, ``Learning from Examples - Instructional Principles from the Worked Examples Research'' \cite{Robert.Atkinson-etal:2000} e ``Using Real Worked Examples to Aid Software Engineering Teaching' \cite{Simone.Tonhao-etal:2021} e ``Uma Plataforma Gamificada de Desafios Baseados Em \textit{Worked Examples} Extraídos de Projetos de Software Livre Para o Ensino de Engenharia de Software'' \cite{Simone.Tonhao-etal:2022} comprovam que o uso de exemplos trabalhados, quando aplicados corretamente, potencializam severamente o engajamento e retenção do conteúdo exposto, porém maioria desses trabalhos são muito focado apenas na \gls{es}. Além disso, o trabalho ``DistFax - A Toolkit for Measuring Interprocess Communications and Quality of Distributed Systems''\cite{DistFax} já tem um cunho de análise de métricas em \gls{sds}, porém não com o intuito de criar um exemplo trabalhado, mas sim de fornecer uma ferramente que ajuda analisar determinados aspectos de \gls{sds}. Dessa forma, até o momento, não foram encontradas pesquisas sobre a utilização da evolução de códigos de Sistemas Distribuídos por meio de métricas estáticas de código para a criação de exemplos trabalhados na disciplina de Engenharia de Software.
 
-% .
+% Possíveis ameaças a viabilidade desta pesquisa.
 Em projetos de desenvolvimento de software, a qualidade e organização dos dados desempenham um papel crucial na condução de pesquisas significativas. No entanto, um dos fatores que podem inviabilizar a pesquisa seria enfrentar com a presença de dados excessivamente poluídos. Isso pode ocorrer quando os \textit{commits} de código, responsáveis por registrar alterações no software, não são adequadamente divididos e agregam uma quantidade substancial de refatorações em um único \textit{commit}, muitas vezes não diretamente relacionadas à mensagem do mesmo.
 
 \section{Estrutura do trabalho}
