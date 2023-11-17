@@ -8,17 +8,17 @@
 Os critérios para a seleção de repositórios foram determinados pelos seguintes fatores:
 
 \begin{itemize}
-    \item \textbf{Ser um repositório \cite{JavaProgrammingLanguage}:} Essencial para viabilizar a aplicação das métricas \gls{ck}.
-    \item \textbf{Ser de código aberto (\textit{open-source}):} A escolha por repositórios abertos, hospedados em plataformas como o \cite{Github}, visa garantir a transparência e acessibilidade do código-fonte.
+    \item \textbf{Ser um repositório Java:} Essencial para viabilizar a aplicação das métricas \gls{ck}.
+    \item \textbf{Ser de código aberto (\textit{open-source}):} A escolha por repositórios abertos, hospedados em plataformas como o \textit{Github}, visa garantir a transparência e acessibilidade do código-fonte.
     \item \textbf{Ser ativamente mantido e atualizado:} A ativa manutenção é crucial para garantir que os repositórios estejam alinhados com as práticas e avanços mais recentes.
     \item \textbf{Ser utilizado em aplicações do mundo real:} A seleção de repositórios empregados em contextos práticos proporciona uma análise mais relevante e aplicável às situações reais.
 \end{itemize}
 
-Dessa forma, os repositórios escolhidos foram o Apache Kafka e o ZooKeeper. Essa escolha baseou-se no fato de ambos os repositórios serem projetos \textit{open-source} disponíveis na plataforma GitHub, onde ambos são mantidos e atualizados de forma ativa para serem utilizados em ambientes do mundo real. Além disso, esses projetos lidam com questões altamente relevantes em \gls{sds}.
+Dessa forma, os repositórios escolhidos foram o \cite{KafkaGitHub} e o \cite{ZookeeperGitHub}. Essa escolha baseou-se no fato de ambos os repositórios serem projetos \textit{open-source} disponíveis na plataforma GitHub, onde ambos são mantidos e atualizados de forma ativa para serem utilizados em ambientes do mundo real. Além disso, esses projetos lidam com questões altamente relevantes em \gls{sds}.
 
-O ZooKeeper desempenha um papel fundamental na coordenação e gerenciamento de serviços distribuídos. Ele oferece um serviço de consenso altamente confiável para \gls{sds}, garantindo a consistência e a sincronização entre os nós. Essa funcionalidade é crucial para a implementação de serviços distribuídos confiáveis e escaláveis, tornando o ZooKeeper uma escolha valiosa para este estudo.
+O \cite{ZookeeperGitHub} desempenha um papel fundamental na coordenação e gerenciamento de serviços distribuídos. Ele oferece um serviço de consenso altamente confiável para \gls{sds}, garantindo a consistência e a sincronização entre os nós. Essa funcionalidade é crucial para a implementação de serviços distribuídos confiáveis e escaláveis, tornando o \cite{ZookeeperGitHub} uma escolha valiosa para este estudo.
 
-Por outro lado, o Apache Kafka destaca-se no processamento de fluxos de dados distribuídos em larga escala. Ele fornece uma plataforma robusta para a transmissão eficiente de eventos entre diferentes componentes de um \gls{sd}. A capacidade do Kafka lidar com volumes massivos de dados em tempo real o torna uma solução amplamente adotada em ambientes que demandam alto desempenho e escalabilidade.
+Por outro lado, o \cite{KafkaGitHub} destaca-se no processamento de fluxos de dados distribuídos em larga escala. Ele fornece uma plataforma robusta para a transmissão eficiente de eventos entre diferentes componentes de um \gls{sd}. A capacidade do \cite{KafkaGitHub} lidar com volumes massivos de dados em tempo real o torna uma solução amplamente adotada em ambientes que demandam alto desempenho e escalabilidade.
 
 Dessa forma, o ambos os repositórios têm muito a agregar em termos de implementação e evolução tanto para a área de \gls{sds} quanto para a \gls{es}. Assim, a escolha desses repositórios permite a análise da evolução do código em contextos práticos e desafiadores, contribuindo para uma compreensão mais abrangente das práticas de desenvolvimento em \gls{sds}.
 
@@ -50,9 +50,9 @@ Essa saída estruturada proporciona uma base sólida para análises mais aprofun
 % Análise das métricas dos projetos selecionados.
 \section{Análise das métricas dos projetos selecionados}
 Apesar de terem sido escolhidos inicialmente dois repositórios para serem analisados, o \cite{KafkaGitHub} e o \cite{ZookeeperGitHub}, até o momento foi analisado o apenas o repositório do \cite{ZookeeperGitHub}, devido à limitação do tempo. 
-O estado atual da análise nos indica que há vários \textit{commits} onde a tendência das métricas foi decrescente, todavia apenas um pequeno escopo desses \textit{commits} tem mensagens de \textit{commit} relacionadas a melhorias de performance, segurança ou troca de algoritmos. Infelizmente, não foi possível correlacionar nenhuma das vulnerabilidades expostas no \cite{cve} com algum commit no \cite{ZookeeperGitHub}.
+O estado atual da análise nos indica que há vários \textit{commits} onde a tendência das métricas foi decrescente, todavia apenas um pequeno escopo desses \textit{commits} tem mensagens de \textit{commit} relacionadas a melhorias de desempenho, segurança ou troca de algoritmos. Infelizmente, não foi possível correlacionar nenhuma das vulnerabilidades expostas no \cite{cve-details} com algum commit no \cite{ZookeeperGitHub}.
 
-% Mencionar o caso de melhorias de performance do ZooKeeper, onde o commit altera inúmeros arquivos mas em si é apenas uma atualização da biblioteca, a qual existe desde o java 1.0 que foi lançado em torno de 1996.
+% Mencionar o caso de melhorias de performance do \cite{ZookeeperGitHub}, onde o commit altera inúmeros arquivos mas em si é apenas uma atualização da biblioteca, a qual existe desde o java 1.0 que foi lançado em torno de 1996.
 
 \section{Limitações}
 \label{sec:limitacoes}
