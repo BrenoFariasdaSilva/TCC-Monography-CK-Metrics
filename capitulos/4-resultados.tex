@@ -40,6 +40,12 @@ Assim, resumidamente, esse código gera metadados que facilitam a análise dos c
 
 A \href{https://github.com/BrenoFariasdaSilva/Scientific-Research/blob/main/PyDriller/Scripts/track_files.py}{terceira ferramenta} desenvolvida, mais uma vez, depende da execução do primeiro código para funcionar. Em suma, esta ferramenta busca por arquivos específicos nos \textit{diffs} dos repositórios. Em nosso estudo, foi utilizada para localizar arquivos de comentários sobre as refatorações realizadas em um \textit{commit}, como o arquivo ``CHANGES.txt'', uma vez que o espaço da mensagem do commit pode oferecer uma visão limitada das refatorações efetuadas.
 
+A \href{https://github.com/BrenoFariasdaSilva/Scientific-Research/blob/main/PyDriller/Scripts/track_files.py}{quarta ferramenta} e a \href{https://github.com/BrenoFariasdaSilva/Scientific-Research/blob/main/RefactoringMiner/metrics_evolution_refactors.py}{quinta ferramenta} desenvolvidas são substancialmente similares, distinguindo-se apenas no escopo de aplicação, onde a quarta  incide sobre a totalidade do repositório, enquanto a quinta é específica para classes ou métodos dentro do repositório. Ambas as ferramentas compartilham um funcionamento comum, fazendo uso da ferramenta \textit{RefactoringMiner}.
+
+O processo inicia-se com a utilização da ferramenta \textit{RefactoringMiner}, a qual, por meio da extração do histórico de \textit{commits}, analisa os \textit{diffs}, identificando padrões de refatorações. O \textit{RefactoringMiner} possui um banco de dados de refatorações previamente detectadas, permitindo uma análise eficiente das mudanças no código-fonte. A ferramenta gera uma saída estruturada que lista as refatorações identificadas, indicando quais arquivos e linhas de código foram afetados em cada \textit{commit}.
+
+Essa saída estruturada proporciona uma base sólida para análises mais aprofundadas, permitindo uma compreensão detalhada das refatorações realizadas ao longo do tempo. A capacidade de distinguir entre o repositório inteiro (quarta ferramenta) e componentes específicos, como classes ou métodos (quinta ferramenta), amplia a flexibilidade dessas ferramentas, adaptando-as às necessidades específicas de investigação e análise de refatorações em projetos de software.
+
 As ferramentas desenvolvidas podem ser encontradas \href{https://github.com/BrenoFariasdaSilva/Scientific-Research}{aqui}, estando as três primeiras no diretório ``PyDriller'' e as duas últimas no diretório ``RefactoringMiner''.
 
 % Análise das métricas dos projetos selecionados.
