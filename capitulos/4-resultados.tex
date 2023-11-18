@@ -31,6 +31,7 @@ Contudo, durante o desenvolvimento do estudo, decidiu-se remover a métrica \gls
 
 % Desenvolvimento das ferramentas disponíveis no GitHub feitas em Python.
 \section{Desenvolvimento da ferramenta}
+
 As ferramentas desenvolvidas podem ser encontradas \href{https://github.com/BrenoFariasdaSilva/Scientific-Research}{aqui}, estando as três primeiras no diretório ``\textit{PyDriller}'' e as duas últimas no diretório ``\textit{RefactoringMiner}'', sendo que todas foram feitas usando a linguagem de programação Python \cite{PythonProgrammingLanguage}.
 
 A \href{https://github.com/BrenoFariasdaSilva/Scientific-Research/blob/main/PyDriller/metrics_changes.py}{primeira ferramenta} desenvolvida está integrada ao \textit{PyDriller} e ao \gls{ck}. Durante esse processo, a ferramenta percorre toda a árvore de \textit{commits} de um repositório específico. Para cada \textit{commit}, o \gls{ck} é executado, resultando na geração das métricas \gls{ck} para cada estado do repositório ao final da execução. Adicionalmente, a ferramenta produz um \textit{diff} para cada refatoração realizada no repositório, possibilitando a investigação das refatorações realizadas no código em caso de identificação de uma tendência de melhoria das métricas.
@@ -44,7 +45,8 @@ A \href{https://github.com/BrenoFariasdaSilva/Scientific-Research/blob/main/PyDr
     \item \textbf{Alterações substanciais nas métricas}: Identificação de padrões de decréscimo do \gls{cbo}, oferecendo uma análise detalhada das classes ou métodos que apresentam tendências de melhoria ao longo do tempo.
 \end{itemize}
 
-Assim, resumidamente, esse código gera metadados que facilitam a análise dos códigos, reduzindo o escopo de busca por refatorações que, à luz das métricas, são consideradas relevantes para nosso estudo.
+Assim, resumidamente, esse código gera metadados que facilitam a análise dos códigos, reduzindo o escopo de busca por refatorações que, à luz das métricas, são consideradas relevantes para nosso estudo. A seguir serão expostos a visualização de exemplos das saídas geradas por esse algoritmo:
+
 
 A \href{https://github.com/BrenoFariasdaSilva/Scientific-Research/blob/main/PyDriller/Scripts/track_files.py}{terceira ferramenta} desenvolvida, mais uma vez, depende da execução do primeiro código para funcionar. Em suma, esta ferramenta busca por arquivos específicos nos \textit{diffs} dos repositórios. Em nosso estudo, foi utilizada para localizar arquivos de comentários sobre as refatorações realizadas em um \textit{commit}, como o arquivo ``CHANGES.txt'', uma vez que o espaço da mensagem do \textit{commit} pode oferecer uma visão limitada das refatorações efetuadas.
 
