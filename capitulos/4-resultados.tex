@@ -27,9 +27,9 @@ Dessa forma, o ambos os repositórios têm muito a agregar em termos de implemen
 
 % Desenvolvimento das ferramentas disponíveis no GitHub feitas em Python.
 \section{Desenvolvimento da ferramenta}
-As ferramentas desenvolvidas podem ser encontradas \href{https://github.com/BrenoFariasdaSilva/Scientific-Research}{aqui}, estando as três primeiras no diretório ``\textit{PyDriller}'' e as duas últimas no diretório ``\textit{RefactoringMiner}'', sendo que todas foram feitas usando a linguagem de programação \cite{PythonProgrammingLanguage}.
+As ferramentas desenvolvidas podem ser encontradas \href{https://github.com/BrenoFariasdaSilva/Scientific-Research}{aqui}, estando as três primeiras no diretório ``\textit{PyDriller}'' e as duas últimas no diretório ``\textit{RefactoringMiner}'', sendo que todas foram feitas usando a linguagem de programação Python \cite{PythonProgrammingLanguage}.
 
-A \href{https://github.com/BrenoFariasdaSilva/Scientific-Research/blob/main/PyDriller/metrics_changes.py}{primeira ferramenta} desenvolvida está integrada ao \cite{PyDrillerSpadini2018} e ao \gls{ck}. Durante esse processo, a ferramenta percorre toda a árvore de \textit{commits} de um repositório específico. Para cada \textit{commit}, o \gls{ck} é executado, resultando na geração das métricas \gls{ck} para cada estado do repositório ao final da execução. Adicionalmente, a ferramenta produz um \textit{diff} para cada refatoração realizada no repositório, possibilitando a investigação das refatorações realizadas no código em caso de identificação de uma tendência de melhoria das métricas.
+A \href{https://github.com/BrenoFariasdaSilva/Scientific-Research/blob/main/PyDriller/metrics_changes.py}{primeira ferramenta} desenvolvida está integrada ao \textit{PyDriller} e ao \gls{ck}. Durante esse processo, a ferramenta percorre toda a árvore de \textit{commits} de um repositório específico. Para cada \textit{commit}, o \gls{ck} é executado, resultando na geração das métricas \gls{ck} para cada estado do repositório ao final da execução. Adicionalmente, a ferramenta produz um \textit{diff} para cada refatoração realizada no repositório, possibilitando a investigação das refatorações realizadas no código em caso de identificação de uma tendência de melhoria das métricas.
 
 A \href{https://github.com/BrenoFariasdaSilva/Scientific-Research/blob/main/PyDriller/metrics_changes.py}{segunda ferramenta} desenvolvida depende da execução do primeiro código para operar. Essencialmente, esta ferramenta percorre as métricas de todos os estados do repositório processado, produzindo os seguintes resultados:
 
@@ -56,9 +56,26 @@ Apesar da intenção inicial de analisar dois repositórios, o \textit{``Apache 
 
 A análise atual revela a presença de vários \textit{commits} no histórico do repositório do \textit{``ZooKeeper''}, e notamos uma tendência decrescente no valor de métricas, como o \gls{cbo}. No entanto, é crucial observar que apenas uma parcela restrita desses \textit{commits} inclui mensagens associadas a melhorias de desempenho, segurança, substituição de algoritmos ou melhorias de modo geral. 
 
-Lamentavelmente, até o momento, apenas um \textit{commit} apresentou uma correlação direta entre as vulnerabilidades identificadas no banco de dados do \textit{``CVE-Details''} e os \textit{commits} no repositório do \textit{``ZooKeeper''}. O único caso encontrado foi para o \textit{commit} 9213f7353b1e6ce4d0fdbc1dca963ace1fd32cec, o qual relaciona-se a vulnerabilidade CVE-2021-21295. Entretando, por mais que o \textit{commit} resolva um problema de vulnerabilidade, constatamos que esta refatoração específica consiste apenas na atualização da versão da biblioteca \textit{Netty} no arquivo pom.xml do Java, o qual prove uma estrutura cliente-servidor de E/S não bloqueante, logo ela não se mostra uma boa candidata para correlacionar métricas de código com a segurança, pois se trata de uma ação direta para resolver uma vulnerabilidade conhecida.
+Lamentavelmente, até o momento, apenas um \textit{commit} apresentou uma correlação direta entre as vulnerabilidades identificadas no banco de dados do \textit{``CVE-Details''} e os \textit{commits} no repositório do \textit{ZooKeeper}. O único caso encontrado foi para o \textit{commit} 9213f7353b1e6ce4d0fdbc1dca963ace1fd32cec, o qual relaciona-se a vulnerabilidade CVE-2021-21295. Entretando, por mais que o \textit{commit} resolva um problema de vulnerabilidade, constatamos que esta refatoração específica consiste apenas na atualização da versão da biblioteca \textit{Netty} no arquivo pom.xml do Java, o qual prove uma estrutura cliente-servidor de E/S não bloqueante, logo ela não se mostra uma boa candidata para correlacionar métricas de código com a segurança, pois se trata de uma ação direta para resolver uma vulnerabilidade conhecida.
 
 Aprofundamos a análise do \textit{commit} 83cf0a93c37759334fab885c2010fa0b7d953f52, cuja mensagem é "\textit{ZOOKEEPER-308. Improve the atomic broadcast performance in 3x}". A princípio, esse \textit{commit} parecia promissor, pois indicava um impressionante ganho de desempenho de 3 vezes. No entanto, após uma investigação mais detalhada, constatamos que a refatoração se resumia à substituição da biblioteca \textit{"FileOutputStream"} por \textit{"BufferedOutputStream"}. Essa mudança, embora resulte em uma melhoria de desempenho, não se configura como uma refatoração significativa, uma vez que o \textit{commit} altera 19 arquivos, mas apenas o arquivo "\textit{FileTxnLog.java}" é relevante, pois consiste na troca das bibliotecas mencionadas. Os outros arquivos alterados, infelizmente, fogem do escopo da mensagem do \textit{commit}, visto que as refatorações estariam relacionadas com a validação se um objeto é nulo, antes de realizar alguma operação com o mesmo. No entendo, admitimos a melhoria de desempenho como válida, embora sua magnitude não possa ser verificada.
+
+Continuamente, a análise da classe relativa ao \textit{commit} onde é indicado o ganho de desempenho em 3 vezes, ao analisar a predição da métrica \gls{cbo}, infelizmente não é observada uma tendência de melhoria
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figuras/343-83cf0a93c37759334fab885c2010fa0b7d953f52/Class-org.apache.zookeeper.server.persistence.FileTxnLog/CBO.png}
+    \caption{CBO da classe \textit{org.apache.zookeeper.server.persistence.FileTxnLog}.}
+    \label{fig:CBO3xPerformanceClass}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figuras/343-83cf0a93c37759334fab885c2010fa0b7d953f52/Class-org.apache.zookeeper.server.persistence.FileTxnLog/RFC.png}
+    \caption{RFC da classe \textit{org.apache.zookeeper.server.persistence.FileTxnLog}.}
+    \label{fig:RFC3xPerformanceClass}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figuras/343-83cf0a93c37759334fab885c2010fa0b7d953f52/Class-org.apache.zookeeper.server.persistence.FileTxnLog/WMC.png}
+    \caption{WMC da classe \textit{org.apache.zookeeper.server.persistence.FileTxnLog}.}
+    \label{fig:WMC3xPerformanceClass}
+\end{figure}
 
 A falta de uma refatoração mais substancial e a existência de uma melhoria de desempenho que não pôde ser validada tornam este \textit{commit} inadequado para servir como objeto de exemplo trabalhado. Além disso, uma vez que a classe \textit{"BufferedOutputStream"} está presente desde a versão inicial do Java (lançada em 1996) e o \textit{commit} em questão é de 2009, ou seja, o uso de um \textit{buffered input} devia ter sido feita desde o começo do projeto.
 
