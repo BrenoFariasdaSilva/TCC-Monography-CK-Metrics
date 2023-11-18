@@ -22,8 +22,12 @@ Por outro lado, o \textit{``Apache Kafka''} destaca-se no processamento de fluxo
 
 Dessa forma, o ambos os repositórios têm muito a agregar em termos de implementação e evolução tanto para a área de \gls{sds} quanto para a \gls{es}. Assim, a escolha desses repositórios permite a análise da evolução do código em contextos práticos e desafiadores, contribuindo para uma compreensão mais abrangente das práticas de desenvolvimento em \gls{sds}.
 
+% Métricas selecionadas inicialmente.
 \section{Métricas Preliminarmente Selecionadas}
-% Assim, no capítulo 4 podemos ter uma seção sobre as métricas preliminarmente selecionadas e, em seguida, uma seção sobre a ferramenta, automatizando a coleta, cálculo e visualização das métricas. Nesse sentido, podem ser apresentados também alguns resultados (figuras inclusive), sem entrar no mérito de análise.
+
+No estágio inicial desta pesquisa, optou-se por selecionar um conjunto específico de métricas, incluindo \gls{cbo}, \gls{cbom}, \gls{rfc} e \gls{wmc}. Essa escolha foi motivada pela intenção de obter uma combinação abrangente que abordasse diferentes aspectos da qualidade do código. As métricas \gls{cbo} e \gls{cbom} foram escolhidas para fornecer \textit{insights} sobre o nível de acoplamento em classes ou métodos, enquanto \gls{rfc} foi selecionada para medir o grau de comunicação entre os elementos do código. Por fim, a métrica \gls{wmc} foi incluída para avaliar a complexidade dos métodos em uma classe.
+
+Contudo, durante o desenvolvimento do estudo, decidiu-se remover a métrica \gls{cbom} da análise. Essa decisão foi tomada devido à percepção de que a inclusão de \gls{cbom} poderia introduzir poluição nos dados, aumentando a complexidade artificialmente. Isso ocorre, por exemplo, quando a adição de uma chamada a um método da própria classe afeta negativamente a métrica. Dessa forma, a exclusão de \gls{cbom} visou manter a integridade e a precisão das métricas escolhidas, proporcionando uma análise mais clara e objetiva da evolução do código.
 
 % Desenvolvimento das ferramentas disponíveis no GitHub feitas em Python.
 \section{Desenvolvimento da ferramenta}
@@ -58,26 +62,30 @@ A análise atual revela a presença de vários \textit{commits} no histórico do
 
 Lamentavelmente, até o momento, apenas um \textit{commit} apresentou uma correlação direta entre as vulnerabilidades identificadas no banco de dados do \textit{``CVE-Details''} e os \textit{commits} no repositório do \textit{ZooKeeper}. O único caso encontrado foi para o \textit{commit} 9213f7353b1e6ce4d0fdbc1dca963ace1fd32cec, o qual relaciona-se a vulnerabilidade CVE-2021-21295. Entretando, por mais que o \textit{commit} resolva um problema de vulnerabilidade, constatamos que esta refatoração específica consiste apenas na atualização da versão da biblioteca \textit{Netty} no arquivo pom.xml do Java, o qual prove uma estrutura cliente-servidor de E/S não bloqueante, logo ela não se mostra uma boa candidata para correlacionar métricas de código com a segurança, pois se trata de uma ação direta para resolver uma vulnerabilidade conhecida.
 
-Aprofundamos a análise do \textit{commit} 83cf0a93c37759334fab885c2010fa0b7d953f52, cuja mensagem é "\textit{ZOOKEEPER-308. Improve the atomic broadcast performance in 3x}". A princípio, esse \textit{commit} parecia promissor, pois indicava um impressionante ganho de desempenho de 3 vezes. No entanto, após uma investigação mais detalhada, constatamos que a refatoração se resumia à substituição da biblioteca \textit{"FileOutputStream"} por \textit{"BufferedOutputStream"}. Essa mudança, embora resulte em uma melhoria de desempenho, não se configura como uma refatoração significativa, uma vez que o \textit{commit} altera 19 arquivos, mas apenas o arquivo "\textit{FileTxnLog.java}" é relevante, pois consiste na troca das bibliotecas mencionadas. Os outros arquivos alterados, infelizmente, fogem do escopo da mensagem do \textit{commit}, visto que as refatorações estariam relacionadas com a validação se um objeto é nulo, antes de realizar alguma operação com o mesmo. No entendo, admitimos a melhoria de desempenho como válida, embora sua magnitude não possa ser verificada.
+Aprofundamos a análise do \textit{commit} 83cf0a93c37759334fab885c2010fa0b7d953f52, cuja mensagem é ``\textit{ZOOKEEPER-308. Improve the atomic broadcast performance in 3x}''. A princípio, esse \textit{commit} parecia promissor, pois indicava um impressionante ganho de desempenho de 3 vezes. No entanto, após uma investigação mais detalhada, constatamos que a refatoração se resumia à substituição da biblioteca \textit{``FileOutputStream''} por \textit{``BufferedOutputStream''}. Essa mudança, embora resulte em uma melhoria de desempenho, não se configura como uma refatoração significativa, uma vez que o \textit{commit} altera 19 arquivos, mas apenas o arquivo ``\textit{FileTxnLog.java}'' é relevante, pois consiste na troca das bibliotecas mencionadas. Os outros arquivos alterados, infelizmente, fogem do escopo da mensagem do \textit{commit}, visto que as refatorações estariam relacionadas com a validação se um objeto é nulo, antes de realizar alguma operação com o mesmo. No entendo, admitimos a melhoria de desempenho como válida, embora sua magnitude não possa ser verificada.
 
-Continuamente, a análise da classe relativa ao \textit{commit} onde é indicado o ganho de desempenho em 3 vezes, ao analisar a predição da métrica \gls{cbo}, infelizmente não é observada uma tendência de melhoria
+Continuamente, a análise da classe relativa ao \textit{commit} onde é indicado o ganho de desempenho em 3 vezes, ao analisar a predição das métricas \gls{cbo}, \gls{rfc} e \gls{wmc}, infelizmente, não é observada uma tendência de melhoria. Isso se deve ao fato do commit 
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.8\linewidth]{figuras/343-83cf0a93c37759334fab885c2010fa0b7d953f52/Class-org.apache.zookeeper.server.persistence.FileTxnLog/CBO.png}
     \caption{CBO da classe \textit{org.apache.zookeeper.server.persistence.FileTxnLog}.}
     \label{fig:CBO3xPerformanceClass}
+\end{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.8\linewidth]{figuras/343-83cf0a93c37759334fab885c2010fa0b7d953f52/Class-org.apache.zookeeper.server.persistence.FileTxnLog/RFC.png}
     \caption{RFC da classe \textit{org.apache.zookeeper.server.persistence.FileTxnLog}.}
     \label{fig:RFC3xPerformanceClass}
+\end{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.8\linewidth]{figuras/343-83cf0a93c37759334fab885c2010fa0b7d953f52/Class-org.apache.zookeeper.server.persistence.FileTxnLog/WMC.png}
     \caption{WMC da classe \textit{org.apache.zookeeper.server.persistence.FileTxnLog}.}
     \label{fig:WMC3xPerformanceClass}
 \end{figure}
 
-A falta de uma refatoração mais substancial e a existência de uma melhoria de desempenho que não pôde ser validada tornam este \textit{commit} inadequado para servir como objeto de exemplo trabalhado. Além disso, uma vez que a classe \textit{"BufferedOutputStream"} está presente desde a versão inicial do Java (lançada em 1996) e o \textit{commit} em questão é de 2009, ou seja, o uso de um \textit{buffered input} devia ter sido feita desde o começo do projeto.
+A falta de uma refatoração mais substancial e a existência de uma melhoria de desempenho que não pôde ser validada tornam este \textit{commit} inadequado para servir como objeto de exemplo trabalhado. Além disso, uma vez que a classe \textit{``BufferedOutputStream''} está presente desde a versão inicial do Java (lançada em 1996) e o \textit{commit} em questão é de 2009, ou seja, o uso de um \textit{buffered input} devia ter sido feita desde o começo do projeto.
 
 % Adicionar pelo menos mais um exemplo de commit analisado.
 
