@@ -1,6 +1,7 @@
 %%%% CAPÍTULO 5 - Metodologia
 
 \chapter{Metodologia}\label{cap:Metodologia}
+Este capítulo delineia os objetivos e a abordagem da pesquisa, apresentando uma visão geral das questões fundamentais abordadas. Além disso, 
 
 % Questões da pesquisa.
 \section{Questões de pesquisa}
@@ -10,37 +11,33 @@ As questões de pesquisa foram formuladas com base nos objetivos geral e especí
 \begin{enumerate}
     \item Como identificar métricas de código relevantes para a análise da evolução em \gls{sds}?
     
-    \item Quais são os padrões e tendências observados que correspondem a uma melhoria do código em \gls{sds}?
+    \item Quais são os padrões e tendências observados que correspondem a uma melhoria clara do código em \gls{sds}?
     
-    \item De que maneira as métricas selecionadas refletem em melhorias com relação a, por exemplo, desempenho e segurança do código em \gls{sds}?
+    \item Como as melhorias de código se refletem nas métricas selecionadas e qual é a relação delas com características não funcionais, como desempenho e segurança em \gls{sds}?
     
-    \item Como transformar um código selecionado pela melhoria das métricas selecionadas de modo a criar um exemplo trabalhado que ilustre a evolução do código em \gls{sds} para o ensino de \gls{es}?
+    \item Quais são as métricas e características mais relevantes para a seleção de exemplos de código apropriados para a criação de exemplos trabalhados na \gls{es}?
 \end{enumerate}
 
 % Abordagem Proposta.
 \section{Abordagem proposta}
 
-No contexto atual da computação, os \gls{sds} desempenham um papel crucial na infraestrutura digital, apresentando desafios significativos devido à necessidade de oferecer uma experiência unificada aos usuários, embora seja constituído por partes heterogêneas. A complexidade inerente aos \gls{sds} torna-se um campo desafiador, mas fundamental para a computação moderna, exigindo uma compreensão aprofundada da evolução do código-fonte nesse contexto.
+O presente trabalho propõe o desenvolvimento de uma heurística para identificar exemplos de código-fonte representativos da melhoria do software em \gls{sds}, por meio da análise de métricas de código utilizadas na \gls{es}. A heurística visa auxiliar na seleção código que permitam a criação de exemplos trabalhados que demonstrem como o código em \gls{sds} se adapta e evolui ao longo do tempo.
 
-A justificativa para este estudo reside na complexidade dos \gls{sds}, essenciais na sociedade digital contemporânea, e na necessidade de compreender a evolução do código-fonte para formar profissionais qualificados. O estudo busca preencher a lacuna na literatura sobre a criação de exemplos trabalhados em \gls{sds}, contribuindo para a formação de estudantes e profissionais em \gls{es}.
-
-No âmbito da \gls{es}, os exemplos trabalhados desempenham um papel crucial, proporcionando soluções ideais e práticas para problemas específicos. No entanto, a escassez de estudos específicos sobre exemplos trabalhados na Ciência da Computação, somada à necessidade de abordar as complexidades dos \gls{sds}, justifica a proposta deste trabalho.
-
-O presente trabalho propõe o desenvolvimento de uma heurística para identificar exemplos de código-fonte representativos da melhoria do software em \gls{sds}, por meio da análise de métricas de código utilizadas na \gls{es}. A heurística visa auxiliar na seleção código que permitam a criação de exemplos trabalhados que demonstrem como o código em \gls{sds} se adapta e evolui ao longo do tempo. Os objetivos específicos incluem o desenvolvimento da heurística de seleção, a identificação de exemplos de código-fonte representativos e a criação de um exemplo trabalhado para a \gls{es}. Dessa forma, como contribuição, espera-se contribuir para a qualidade do ensino da \gls{es} e da área de \gls{sds}, fornecendo um exemplo trabalhado que impulse a qualidade do ensino de ambas.
+A heurística a ser desenvolvida nesta pesquisa baseia-se nas melhorias que podem ser identificadas através das métricas selecionadas. As métricas devem ser capazes de capturar informações valiosas relacionadas a evolução do código em \gls{sds}, logo são empregadas ferramentas específicas em repositórios cuidadosamente selecionados. 
 
 % Ferramentas Utilizadas e o motivo.
-\section{Ferramentas}\label{sec:ferramentas}
+\subsection{Ferramentas}\label{sec:ferramentas}
 % Ferramenta CK.
-O \gls{ck} \cite{aniche-ck} é uma ferramenta poderosa que nos permite analisar a qualidade do código-fonte em projetos Java por meio da análise de métricas estáticas de código. Essas métricas fornecem informações valiosas sobre características como complexidade, acoplamento e coesão de classes. Ao incorporar o \gls{ck} em nossa pesquisa, estamos criando formas de classificar classes ou métodos com relação a métricas estáticas de qualidade de código. A ferramenta em questão apresenta mais de 35 métricas.
+O \gls{ck} \cite{aniche-ck} é uma ferramenta que nos permite analisar a qualidade do código-fonte em projetos Java por meio da análise de métricas estáticas de código. Essas métricas fornecem informações valiosas sobre características como complexidade, acoplamento e coesão de classes. Ao incorporar o \gls{ck} em nossa pesquisa, estamos criando formas de classificar classes ou métodos com relação a métricas estáticas de qualidade de código. A ferramenta em questão apresenta mais de 35 métricas.
 
 % Ferramenta RefactoringMiner.
-O \textit{RefactoringMiner} \cite{Tsantalis:ICSE:2018:RefactoringMiner} é uma ferramenta fundamental no contexto da \gls{es}, especializada em identificar e analisar refatorações de código-fonte. Essa ferramenta desempenha um papel crucial ao fornecer uma compreensão aprofundada das mudanças realizadas em um código ao longo do tempo. Com a sua capacidade de reconhecer padrões de refatoração, o \textit{RefactoringMiner} permite que os desenvolvedores analisem como o código foi modificado, de modo a melhorar a qualidade, manutenibilidade e eficiência do software.
+O \textit{RefactoringMiner} \cite{Tsantalis:ICSE:2018:RefactoringMiner} é uma ferramenta no contexto da \gls{es}, especializada em identificar e analisar refatorações de código-fonte. Essa ferramenta fornecer uma compreensão aprofundada das mudanças realizadas em um código ao longo do tempo. Com a sua capacidade de reconhecer padrões de refatoração, o \textit{RefactoringMiner} permite que os desenvolvedores analisem como o código foi modificado, de modo a melhorar a qualidade, manutenibilidade e eficiência do software.
 
 % Ferramenta PyDriller.
-A biblioteca \textit{PyDriller} \cite{PyDrillerSpadini2018} é um recurso essencial para análise de repositórios de código-fonte escritos em Python. Sua funcionalidade abrangente permite aos pesquisadores e desenvolvedores explorar e compreender a evolução do código em projetos Python de uma maneira eficiente. O \textit{PyDriller} oferece recursos para extrair informações cruciais, como histórico, autoria e mensagens de \textit{commits}, além de detalhes específicos do estado do código em um determinado momento, contribuindo assim para a pesquisa e prática em \gls{es} no contexto de sistemas complexos e interconectados.
+A biblioteca \textit{PyDriller} \cite{PyDrillerSpadini2018} é um recurso para análise de repositórios de código-fonte escritos em Python. Sua funcionalidade abrangente permite aos pesquisadores e desenvolvedores explorar e compreender a evolução do código em projetos Python de uma maneira eficiente. O \textit{PyDriller} oferece recursos para extrair informações cruciais, como histórico, autoria e mensagens de \textit{commits}, além de detalhes específicos do estado do código em um determinado momento, contribuindo assim para a pesquisa e prática em \gls{es} no contexto de sistemas complexos e interconectados.
 
 % Repositórios.
-\section{Repositórios}\label{sec:repositorios}
+\subsection{Repositórios}\label{sec:repositorios}
 
 % Conceito do Apache Kafka.
 O Apache Kafka \cite{KafkaGitHub} é um sistema de mensagens distribuídas, baseado no modelo \textit{publish-subscribe}, que desempenha um papel fundamental na infraestrutura de processamento de eventos em tempo real. Conforme o artigo ``Apache Kafka: Next Generation Distributed Messaging System'' \cite{ApacheKafkaNextGenerationDistributedMessagingSystem:2010}, o Kafka é projetado para lidar com fluxos de dados em grande escala, permitindo que organizações processem, armazenem e transmitam dados de maneira eficiente, o qual opera em um modelo de log distribuído, no qual as mensagens são registradas em logs (ou tópicos) que podem ser divididos em partições. 
@@ -79,7 +76,7 @@ Além disso, a pesquisa visa ir além da mera análise quantitativa, incorporand
 
 % Passo a passo e resultados esperados.
 \begin{enumerate}
-    \item Realizar uma revisão da literatura abrangente, explorando estudos relevantes em \gls{sds}, métricas de código em \gls{es} e uso de exemplos trabalhados em sala de aula.
+    \item Realizar uma revisão da literatura, explorando estudos sobre métricas de código em \gls{es} e \gls{sds}.
     \\\textbf{Resultado esperado:} Lista de estudos sobre exemplos trabalhados e as respectivas contribuições.
 
     \item Selecionar um ou mais repositórios \textit{open-source} pertinentes à área de \gls{sds} que servirão como fonte de exemplos de código para análise.
@@ -97,16 +94,17 @@ Além disso, a pesquisa visa ir além da mera análise quantitativa, incorporand
 
 Dessa forma, consoante as atividades propostas, cria-se o seguinte cronograma:
 
-\begin{table}[H]
+\begin{table}
 \centering
 \caption{Cronograma}
-\begin{tabular}{cccccccc}
-\cline{1-1}
-\multicolumn{1}{|l|}{} & Atividade/Mês & Março & Abril & Junho & Julho  \\ \cline{1-1}
-                       & 1 & x & x &  & \\
-                       & 2 & x & x &  & \\
-                       & 3 & x & x & X & \\
-                       & 4 & x & x & x & x \\
-                       & 5 &  & x & x & x
+\begin{tabular}{lcccccc}
+
+Atividade/Mês & Janeiro & Fevereiro & Março & Abril & Junho & Julho  \\
+\hline
+1 - Revisão da literatura & x & x & x & x & & \\
+2 - Seleção de repositórios & x & x & x & x & & \\
+3 - Selecionar métricas & x & x & x & x & x & \\
+4 - Selecionar exemplos & & x & x & x & x & x \\
+5 - Avaliar utilidade educacional & & & x & x & x & x
 \end{tabular}
 \end{table}

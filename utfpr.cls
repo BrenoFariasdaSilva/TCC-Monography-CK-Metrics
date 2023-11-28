@@ -941,8 +941,9 @@
       \end{flushleft}
       %\singlespacing
 }{%%
-      \\
-      \par\textbf{\nomepalavraschave:}
+      \par
+      \vspace{.5cm}
+      \textbf{\nomepalavraschave:}
       \ifthenelse{\imprimirnumerodepalavraschave > 0}{\imprimirpalavrachavea}{}%%
       \ifthenelse{\imprimirnumerodepalavraschave > 1}{; \imprimirpalavrachaveb}{}%%
       \ifthenelse{\imprimirnumerodepalavraschave > 2}{; \imprimirpalavrachavec}{}%%
@@ -961,8 +962,9 @@
       \end{flushleft}
       %\singlespacing
 }{%%
-      \\
-      \par\textbf{\nomekeywords:}
+      \par
+      \vspace{.5cm}
+      \textbf{\nomekeywords:}
       \ifthenelse{\imprimirnumerodekeywords > 0}{\imprimirkeyworda}{}%%
       \ifthenelse{\imprimirnumerodekeywords > 1}{; \imprimirkeywordb}{}%%
       \ifthenelse{\imprimirnumerodekeywords > 2}{; \imprimirkeywordc}{}%%
