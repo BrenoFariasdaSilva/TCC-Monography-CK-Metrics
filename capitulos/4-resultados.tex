@@ -139,6 +139,7 @@ A falta de uma refatoração mais substancial e a existência de uma melhoria de
 Observamos que parte da complexidade na análise de um \textit{commit} propriamente dito reside na existência de uma considerável poluição nos dados. Muitos \textit{commits} no repositório do \textit{``ZooKeeper''} abrangem alterações em inúmeros arquivos, frequentemente incorporando refatorações não diretamente correlacionadas às mensagens de \textit{commit}. Essa complexidade aumenta a dificuldade de discernir as motivações subjacentes por trás das mudanças no código-fonte, tornando desafiador o processo de vincular essas alterações a possíveis vulnerabilidades identificadas externamente. Este fenômeno destaca a importância de uma abordagem criteriosa na interpretação do histórico de \textit{commits} para extrair conclusões significativas sobre a evolução do \textit{software} em relação à qualquer aspecto desejado.
 
 Enquanto o estudo utiliza métricas \gls{ipc} dinâmicas, ou seja, geradas em tempo de execução, o nosso estudo emprega métricas de código estáticas, geradas apenas pela análise do código-fonte. Isso se deve à inadequação das métricas tradicionais para medir a qualidade das trocas de mensagens em \gls{sds}, pois eles não se baseiam em relações explícitas, analisam apenas um computador e não consideram o sistema em sua totalidade. 
+Embora o uso dessas métricas seja benéfico, o custo computacional pode ser significativo para calcular todas elas em nosso estudo.
 
 \section{Limitações}
 \label{sec:limitacoes}
