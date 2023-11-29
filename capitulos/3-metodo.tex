@@ -25,6 +25,27 @@ O presente trabalho propõe o desenvolvimento de uma heurística para identifica
 
 A heurística a ser desenvolvida nesta pesquisa baseia-se nas melhorias que podem ser identificadas através das métricas selecionadas. As métricas devem ser capazes de capturar informações valiosas relacionadas a evolução do código em \gls{sds}, logo são empregadas ferramentas específicas em repositórios cuidadosamente selecionados. 
 
+% Métricas CK.
+\subsection{Métricas de software}
+O artigo ``A Metrics Suite for Object Oriented Design'' \cite{MetricsSuite} apresenta um conjunto de métricas para avaliação do design de código orientado a objetos, introduzindo métricas cruciais para compreender a complexidade e qualidade do código-fonte. As métricas apresentadas são \gls{cbo}, \gls{dit}, \gls{lcom}, \gls{noc}, \gls{rfc} e \gls{wmc}. Neste contexto, exploraremos cada uma dessas métricas, destacando sua importância e contribuição para a avaliação de qualidade de software.
+
+% Explicação das Métricas CK.
+\begin{itemize}
+    \item \textbf{\gls{cbo}}: Reflete o grau de acoplamento, ou seja, as dependências que uma classe específica possui, indicando a quantidade de classes diretamente associadas a essa classe, já que utiliza métodos dessas classes. Um valor elevado sugere maior complexidade e menor flexibilidade, pois mudanças na classe podem impactar várias outras, não suficiente, demasiado acoplamento diminui o grau de modularidade de uma classe. Observar uma redução no \gls{cbo} ao longo da evolução do código é um indicativo positivo de melhorias na qualidade do código.
+    
+%    Uma variação da implementação do \gls{cbo}, também denominada \gls{cbom} considera a dependência de classes como uma referência a um objeto do mesmo tipo. Isso significa que, ao adicionar uma simples chamada de método da classe, a métrica é incrementada. 
+
+    \item \textbf{\gls{dit}}: Reflete a profundidade da árvore de herança à qual uma classe depende, indicando a quantidade de ``pais'' que uma classe tem. Todos as classes têm um \gls{dit} de pelo menos 1 (pois todas herdam de \texttt{java.lang.Object}). Um valor elevado de \gls{dit} pode indicar uma maior complexidade e potencial para efeitos colaterais ao realizar alterações em alguma das superclasses.
+    
+    \item \textbf{\gls{lcom}}: Representa o coeficiente de falta de coesão em métodos, mensurando a coesão em uma classe. O valor varia de 0 a 1, onde 0 indica alta coesão e 1 indica falta de coesão. Baixos valores são desejados, indicando que os métodos estão fortemente inter-relacionados, contribuindo para uma classe mais coesa.
+
+    \item \textbf{\gls{noc}}: Indica o número de filhos diretos de uma classe. Um valor alto pode indicar maior reusabilidade, mas também pode aumentar a complexidade, pois a classe pode ter muitas responsabilidades. O equilíbrio é necessário para manter uma estrutura clara e eficiente.
+
+    \item \textbf{\gls{rfc}}: Refere-se ao número de invocações únicas de um método de uma determinada classe, isto é, a métrica conta o número de invocações estáticas, avaliando o nível de comunicação entre classes. Um alto valor de métodos que podem ser invocados em função de dar uma resposta a um método, maior será a dificuldade em testar e depurar o código em questão.
+
+    \item \textbf{\gls{wmc}}: Simboliza a soma dos valores de complexidade dos métodos de uma classe específica. Um valor elevado indica que a classe pode ser complexa, com múltiplos métodos, implicando em um custo significativo para o desenvolvimento e manutenção. Além disso, a existência de vários métodos associados a uma classe sugere que ela pode ser menos genérica, sem mencionar o possível impacto nos filhos dessa classe.
+\end{itemize}
+
 % Ferramentas Utilizadas e o motivo.
 \subsection{Ferramentas}\label{sec:ferramentas}
 % Ferramenta CK.
