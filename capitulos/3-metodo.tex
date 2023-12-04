@@ -49,16 +49,17 @@ O artigo ``\textit{A Metrics Suite for Object Oriented Design}'' \cite{MetricsSu
 % Ferramentas Utilizadas e o motivo.
 \subsection{Ferramentas}\label{sec:ferramentas}
 % Ferramenta CK.
-O \gls{ck} \cite{aniche-ck} é a ferramenta utilizada nesta pesquisa para analisar a qualidade do código-fonte em projetos Java por meio de métricas estáticas. Essas métricas fornecem informações valiosas sobre características como complexidade, acoplamento e coesão de classes. Ao incorporar o \gls{ck} na pesquisa, é possível classificar classes ou métodos com relação a métricas estáticas de qualidade de código. A ferramenta em questão apresenta mais de 35 métricas.
+O \gls{ck}\footnote{https://github.com/mauricioaniche/ck} \cite{aniche-ck} é a ferramenta utilizada nesta pesquisa para analisar a qualidade do código-fonte em projetos Java \cite{JavaProgrammingLanguage} por meio de métricas estáticas. Essas métricas fornecem informações valiosas sobre características como complexidade, acoplamento e coesão de classes. A ferramenta em questão apresenta mais de 35 métricas.
 
 % Ferramenta RefactoringMiner.
-O \textit{RefactoringMiner} \cite{Tsantalis:ICSE:2018:RefactoringMiner} é uma ferramenta no contexto da \gls{es}, especializada em identificar e analisar refatorações de código-fonte. Essa ferramenta fornece uma compreensão aprofundada das mudanças realizadas em um código ao longo do tempo. Com a sua capacidade de reconhecer padrões de refatoração, o \textit{RefactoringMiner} permite que os desenvolvedores analisem como o código foi modificado, de modo a melhorar a qualidade, manutenibilidade e eficiência do software.
+O \textit{RefactoringMiner} \footnote{https://github.com/tsantalis/RefactoringMiner} \cite{Tsantalis:ICSE:2018:RefactoringMiner} é uma ferramenta no contexto da \gls{es}, especializada em identificar e analisar refatorações de código-fonte. Essa ferramenta fornece uma compreensão aprofundada das mudanças realizadas em um código ao longo do tempo. Com a sua capacidade de reconhecer padrões de refatoração, o \textit{RefactoringMiner} permite que os desenvolvedores analisem como o código foi modificado, de modo a melhorar a qualidade, manutenibilidade e eficiência do software.
 
 % Ferramenta PyDriller.
 A biblioteca \textit{PyDriller} \cite{PyDrillerSpadini2018} é um recurso para análise de repositórios de código-fonte escritos em Python. Sua funcionalidade abrangente permite aos pesquisadores e desenvolvedores explorar e compreender a evolução do código em projetos Python de uma maneira eficiente. O \textit{PyDriller} oferece recursos para extrair informações cruciais, como histórico, autoria e mensagens de \textit{commits}, além de detalhes específicos do estado do código em um determinado momento, contribuindo assim para a pesquisa e prática em \gls{es} no contexto de sistemas complexos e interconectados.
 
 % Repositórios.
 \subsection{Repositórios}\label{sec:repositorios}
+A seguir são apresentados os projetos de código aberto disponíveis no https://github.com, que serão analisados neste trabalho de pesquisa.
 
 % Conceito do Apache Kafka.
 O Apache Kafka \cite{KafkaGitHub} é um sistema de mensagens distribuídas, baseado no modelo \textit{publish-subscribe}, que desempenha um papel fundamental na infraestrutura de processamento de eventos em tempo real. Conforme o artigo ``\textit{Apache Kafka: Next Generation Distributed Messaging System}'' \cite{ApacheKafkaNextGenerationDistributedMessagingSystem:2010}, o Kafka é projetado para lidar com fluxos de dados em grande escala, permitindo que organizações processem, armazenem e transmitam dados de maneira eficiente, operando em um modelo de log distribuído, no qual as mensagens são registradas em logs (ou tópicos) que podem ser divididos em partições. 
@@ -66,8 +67,8 @@ A estrutura do Apache Kafka é composta por vários componentes, incluindo:
 
 % Elementos estruturais do Apache Kafka.
 \begin{itemize}
-  \item \textbf{Produtores}: São responsáveis por publicar mensagens em tópicos do Kafka.
   \item \textbf{Tópicos}: São canais de mensagens nos quais os dados são publicados e armazenados.
+  \item \textbf{Produtores}: São responsáveis por publicar mensagens em tópicos do Kafka.
   \item \textbf{Partições}: Os tópicos podem ser divididos em partições para permitir a distribuição e o processamento paralelo de mensagens.
   \item \textbf{Corretores (Brokers)}: São servidores que armazenam e distribuem as mensagens. Eles desempenham um papel central na arquitetura do Kafka.
   \item \textbf{Consumidores}: São aplicativos que se inscrevem nos tópicos para receber mensagens e processá-las.
@@ -105,10 +106,10 @@ Atividade/Mês & Janeiro & Fevereiro & Março & Abril & Maio & Junho  \\
 1 - Revisão da literatura & x & x & x & x & & \\
 2 - Seleção de repositórios & x & x & & & & \\
 3 - Seleção de métricas & x & x & x & & & \\
-4 - Escrita e publicação de um resumo & & x & x & & & \\
+4 - Escrita e publicação de um artigo resumido & & x & x & & & \\
 5 - Seleção de exemplos & & & & x & x & x \\
 6 - Avaliação da utilidade educacional & & & & x & x & x \\
-7 - Escrita e publicação de um resumo & & & & & x & x
+7 - Escrita e publicação de um artigo resumido & & & & & x & x
 \end{tabular}
 \end{table}
 
@@ -123,7 +124,7 @@ Atividade/Mês & Janeiro & Fevereiro & Março & Abril & Maio & Junho  \\
     \item Selecionar métricas de código específicas e relevantes apropriadas para avaliar a evolução de código em \gls{sds}, considerando as melhores práticas da área.
     \\\textbf{Resultado esperado:} Lista de métricas de código selecionadas, capazes de refletir melhorias, por exemplo, com relações a desempenho.
 
-    \item Escrita e publicação de um resumo sobre o projeto e as metodologias utilizadas até o momento.
+    \item Escrita e publicação de um artigo resumido sobre o projeto e as metodologias utilizadas até o momento.
     \\\textbf{Resultado esperado:} Resumo publicado apresentando o projeto, metodologias e atividades desenvolvidas até fevereiro e março na revista/evento ...
 
     \item Selecionar exemplos específicos de código trabalhados nos repositórios escolhidos, aplicando a heurística desenvolvida e justificando a seleção com base em métricas de código.
@@ -132,7 +133,7 @@ Atividade/Mês & Janeiro & Fevereiro & Março & Abril & Maio & Junho  \\
     \item Avaliar a utilidade educacional dos exemplos de código selecionados, usando-os em um contexto de ensino.
     \\\textbf{Resultado esperado:} Contribuir para o estudo do código de um \gls{sd} no âmbito da \gls{es}.
 
-    \item Escrita e publicação de um resumo sobre os resultados obtidos até o momento, destacando descobertas e contribuições.
+    \item Escrita e publicação de um artigo resumido sobre os resultados obtidos até o momento, destacando descobertas e contribuições.
     \\\textbf{Resultado esperado:} Resumo publicado apresentando os resultados e contribuições entre abril e junho na revista/evento ...
 \end{enumerate}
 
