@@ -16,10 +16,6 @@ Os critérios para a seleção de repositórios foram determinados pelos seguint
 
 Os projetos escolhidos foram o \textit{``Apache Kafka''} \cite{KafkaGitHub} e o \textit{``ZooKeeper''} \cite{ZookeeperGitHub}. Essa escolha baseou-se no fato de os repositórios serem projetos \textit{open-source} disponíveis na plataforma GitHub, onde ambos são mantidos e atualizados de forma ativa para serem utilizados em ambientes do mundo real. Além disso, esses projetos lidam com questões altamente relevantes em \gls{sds}.
 
-O \textit{``ZooKeeper''} desempenha um papel fundamental na coordenação e gerenciamento de serviços distribuídos. Ele oferece um serviço de consenso altamente confiável para \gls{sds}, garantindo a consistência e a sincronização entre os nós. Essa funcionalidade é crucial para a implementação de serviços distribuídos confiáveis e escaláveis, tornando o \textit{``ZooKeeper''} uma escolha valiosa para este estudo.
-
-Por outro lado, o \textit{``Apache Kafka''} destaca-se no processamento de fluxos de dados distribuídos em larga escala. Ele fornece uma plataforma robusta para a transmissão eficiente de eventos entre diferentes componentes de um \gls{sd}. A capacidade do \textit{``Apache Kafka''} lidar com volumes massivos de dados em tempo real o torna uma solução amplamente adotada em ambientes que demandam alto desempenho e escalabilidade.
-
 Logo, ambos os repositórios têm muito a agregar em termos de implementação e evolução, tanto para a área de \gls{sds} quanto para a \gls{es}. Assim, a escolha desses repositórios permite a análise da evolução do código em contextos práticos e desafiadores, contribuindo para uma compreensão mais abrangente das práticas de desenvolvimento em \gls{sds}.
 
 % Métricas selecionadas inicialmente.
@@ -141,6 +137,17 @@ A falta de uma refatoração mais substancial e a existência de uma melhoria de
 % Adicionar pelo menos mais um exemplo de commit analisado.
 
 Observou-se que parte da complexidade na análise de um \textit{commit} propriamente dito reside na existência de uma considerável poluição nos dados. Muitos \textit{commits} no repositório do \textit{``ZooKeeper''} abrangem alterações em inúmeros arquivos, frequentemente incorporando refatorações não diretamente correlacionadas às mensagens de \textit{commit}. Essa complexidade aumenta a dificuldade de discernir as motivações subjacentes por trás das mudanças no código-fonte, tornando desafiador o processo de vincular essas alterações a possíveis vulnerabilidades identificadas externamente. Este fenômeno destaca a importância de uma abordagem criteriosa na interpretação do histórico de \textit{commits} para extrair conclusões significativas sobre a evolução do \textit{software} em relação à qualquer aspecto desejado.
+
+\section{Heurística}
+\label{sec:heuristica}
+
+A heurística, ainda a ser concluída no TCC2, tem como finalidade auxiliar na criação de exemplos trabalhados para a \gls{es} por meio da análise da evolução do código nos repositórios selecionados, baseou-se em uma abordagem sistemática que envolve a escolha cuidadosa dos projetos, a seleção de métricas apropriadas e o desenvolvimento de ferramentas específicas para a análise. Primeiramente, foram estabelecidos critérios para a seleção de repositórios por meio de fatores como, ser um \gls{sds}, desenvolvido em Java, \textit{open-source}, ativamente mantido e utilizado em aplicações do mundo real. Os projetos escolhidos, \textit{Apache Kafka} e \textit{ZooKeeper}, destacaram-se por sua relevância no mercado de trabalho.
+
+As métricas selecionadas inicialmente, como \gls{cbo}, \gls{rfc}, e \gls{wmc}, foram escolhidas para fornecer uma visão abrangente da qualidade do código, abordando diferentes aspectos. No entanto, durante o desenvolvimento do estudo, a métrica \gls{cbom} foi removida devido à percepção de que poderia introduzir poluição nos dados, comprometendo a integridade das métricas escolhidas.
+
+Para a análise da evolução do código, foram desenvolvidas cinco ferramentas específicas, como \textit{code\_metrics.py}, \textit{metrics\_changes.py}, \textit{track\_files.py}, \textit{metrics\_evolution\_refactors.py}, e \textit{repository\_refactors.py.py}. Essas ferramentas foram implementadas em Python, utilizando o \textit{PyDriller} e o \textit{RefactoringMiner}, e estão disponíveis no Github \footnote{https://github.com/BrenoFariasdaSilva/Scientific-Research}.
+
+Em síntese, a heurística inicialmente desenvolvida visa fornecer uma abordagem sistemática e contextualizada para a análise da evolução do código em \gls{sds}, reconhecendo as complexidades e desafios inerentes a essa tarefa, mas que, de fato, só será concluída no TCC2.
 
 \section{Limitações}
 \label{sec:limitacoes}
