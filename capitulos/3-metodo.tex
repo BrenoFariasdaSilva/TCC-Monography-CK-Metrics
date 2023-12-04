@@ -84,6 +84,8 @@ O \gls{zk} \cite{ZookeeperGitHub} é um serviço de coordenação distribuída a
 % Conceito do ZooKeeper - Continuação.
 O \gls{zk} fornece um sistema de coordenação sem espera (do inglês, ``\textit{wait-free}''), por meio de um mecanismo de observação para permitir que os clientes armazenem dados em \textit{cache} sem ter que gerenciar o \textit{cache} do cliente diretamente. Além disso, a implementação do algoritmo denominado \gls{zab} é responsável por garantir a consistência de dados distribuídos no \gls{zk} por meio do uso do \textit{Two-Phase Commit Protocol} para replicar todas as transações para todos os nós do cluster do \gls{zk}\cite{CloudKarafkaZAB}.
 
+O \textit{``ZooKeeper''} desempenha um papel fundamental na coordenação e gerenciamento de serviços distribuídos. Ele oferece um serviço de consenso altamente confiável para \gls{sds}, garantindo a consistência e a sincronização entre os nós. Essa funcionalidade é crucial para a implementação de serviços distribuídos confiáveis e escaláveis, tornando o \textit{``ZooKeeper''} uma escolha valiosa para este estudo.
+
 % Métodos.
 \section{Métodos}\label{sec:metodo}
 Este trabalho de pesquisa adota uma abordagem exploratória com o propósito de desenvolver uma heurística que possibilite a seleção criteriosa de códigos representativos de melhorias de software, de acordo com métricas específicas de \textit{código} em projetos de \gls{sds}. O objetivo principal é aprofundar a compreensão desses casos, permitindo uma análise detalhada da evolução do código em resposta a mudanças nas métricas escolhidas. Esse estudo visa contribuir diretamente para a construção de exemplos trabalhados aplicáveis ao contexto da \gls{es}.
