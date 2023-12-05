@@ -27,7 +27,7 @@ A heurística a ser desenvolvida nesta pesquisa baseia-se nas melhorias que pode
 
 % Métricas CK.
 \subsection{Métricas de software} \label{sec:metricasDeSoftware}
-O artigo ``\textit{A Metrics Suite for Object Oriented Design}'' \cite{MetricsSuite} apresenta um conjunto de métricas para avaliação do design de código orientado a objetos, introduzindo métricas cruciais para compreender a complexidade e qualidade do código-fonte. As principais métricas apresentadas no artigo são listadas a seguir.
+O artigo ``\textit{A Metrics Suite for Object Oriented Design}'' \cite{MetricsSuite} apresenta um conjunto de métricas para avaliação do design de código orientado a objetos, introduzindo métricas que permitem compreender a complexidade e qualidade do código-fonte. As principais métricas apresentadas no artigo são listadas a seguir.
 
 % Explicação das Métricas CK.
 \begin{itemize}
@@ -62,7 +62,7 @@ A biblioteca \textit{PyDriller} \footnote{https://github.com/ishepard/pydriller}
 A seguir são apresentados os projetos de código aberto disponíveis no https://github.com, que serão analisados neste trabalho de pesquisa.
 
 % Conceito do Apache Kafka.
-O Apache Kafka \cite{KafkaGitHub} é um sistema de mensagens distribuídas, baseado no modelo \textit{publish-subscribe}, que desempenha um papel fundamental na infraestrutura de processamento de eventos em tempo real. Conforme o artigo ``\textit{Apache Kafka: Next Generation Distributed Messaging System}'' \cite{ApacheKafkaNextGenerationDistributedMessagingSystem:2010}, o Kafka é projetado para lidar com fluxos de dados em grande escala, permitindo que organizações processem, armazenem e transmitam dados de maneira eficiente, operando em um modelo de log distribuído, no qual as mensagens são registradas em logs (ou tópicos) que podem ser divididos em partições. 
+O Apache Kafka \cite{KafkaGitHub} é um sistema de mensagens distribuídas, baseado no modelo \textit{publish-subscribe}, amplamente utilizado em infraestruturas de processamento de eventos em tempo real. Conforme o artigo ``\textit{Apache Kafka: Next Generation Distributed Messaging System}'' \cite{ApacheKafkaNextGenerationDistributedMessagingSystem:2010}, o Kafka é projetado para lidar com fluxos de dados em grande escala, permitindo que organizações processem, armazenem e transmitam dados de maneira eficiente, operando em um modelo de log distribuído, no qual as mensagens são registradas em logs (ou tópicos) que podem ser divididos em partições. 
 A estrutura do Apache Kafka é composta por vários componentes, incluindo:
 
 % Elementos estruturais do Apache Kafka.
@@ -84,7 +84,7 @@ O \gls{zk} \cite{ZookeeperGitHub} é um serviço de coordenação distribuída a
 % Conceito do ZooKeeper - Continuação.
 O \gls{zk} fornece um sistema de coordenação sem espera (do inglês, ``\textit{wait-free}''), por meio de um mecanismo de observação para permitir que os clientes armazenem dados em \textit{cache} sem ter que gerenciar o \textit{cache} do cliente diretamente. Além disso, a implementação do algoritmo denominado \gls{zab} é responsável por garantir a consistência de dados distribuídos no \gls{zk} por meio do uso do \textit{Two-Phase Commit Protocol} para replicar todas as transações para todos os nós do cluster do \gls{zk}\cite{CloudKarafkaZAB}.
 
-O \textit{``ZooKeeper''} desempenha um papel fundamental na coordenação e gerenciamento de serviços distribuídos. Ele oferece um serviço de consenso altamente confiável para \gls{sds}, garantindo a consistência e a sincronização entre os nós. Essa funcionalidade é crucial para a implementação de serviços distribuídos confiáveis e escaláveis, tornando o \textit{``ZooKeeper''} uma escolha valiosa para este estudo.
+O \textit{``ZooKeeper''} é utilizado para coordenação e gerenciamento de serviços distribuídos. Ele oferece um serviço de consenso altamente confiável para \gls{sds}, garantindo a consistência e a sincronização entre os nós. Essa funcionalidade permite a implementação de serviços distribuídos confiáveis e escaláveis, tornando o \textit{``ZooKeeper''} uma escolha valiosa para este estudo.
 
 % Métodos.
 \section{Métodos}\label{sec:metodo}
@@ -94,7 +94,7 @@ A natureza exploratória da pesquisa pretende proporcionar uma visão mais ampla
 
 Para alcançar esses objetivos, serão realizadas análises minuciosas de repositórios de código aberto relevantes na área de \gls{sds}, considerando não apenas a evolução do código-fonte, mas também as mudanças nas métricas escolhidas ao longo do tempo. Na vertente de desempenho, serão investigados elementos que possam impactar a eficiência operacional, enquanto na esfera da segurança, será explorada a possibilidade de correlacionar informações de algum \gls{cve} \cite{cve-details} com alterações específicas no código, proporcionando uma análise abrangente e multifacetada. A metodologia adotada permite, assim, uma compreensão holística da relação entre a qualidade do código e as métricas específicas selecionadas.
 
-Além disso, a pesquisa visa ir além da mera análise quantitativa, incorporando uma abordagem qualitativa ao desenvolver exemplos trabalhados que demonstrem, de forma clara e pedagogicamente eficaz, como a evolução do código em \gls{sds} pode ser interpretada e compreendida no âmbito da \gls{es}. Essa abordagem qualitativa será fundamental para a construção de um conhecimento prático e aplicável que possa enriquecer o ensino e a prática profissional na área.
+Além disso, a pesquisa visa ir além da mera análise quantitativa, incorporando uma abordagem qualitativa ao desenvolver exemplos trabalhados que demonstrem, de forma clara e pedagogicamente eficaz, como a evolução do código em \gls{sds} pode ser interpretada e compreendida no âmbito da \gls{es}. Essa abordagem qualitativa permite a construção de um conhecimento prático e aplicável que possa enriquecer o ensino e a prática profissional na área.
 
 \section{Resultados esperados e cronograma}
 
