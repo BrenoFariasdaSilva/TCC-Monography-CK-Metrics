@@ -42,7 +42,6 @@ Em resumo, o desenvolvimento de \gls{sds} é desafiador, o que evidencia a impor
 % Lacuna na literatura.
 Os estudos existentes, como ``\textit{Learning from Examples - Instructional Principles from the Worked Examples Research}'' \cite{Robert.Atkinson-etal:2000}, ``\textit{Using Real Worked Examples to Aid Software Engineering Teaching}' \cite{Simone.Tonhao-etal:2021}, ``Uma Plataforma Gamificada de Desafios Baseados Em \textit{Worked Examples} Extraídos de Projetos de Software Livre Para o Ensino de Engenharia de Software'' \cite{Simone.Tonhao-etal:2022} e ``\textit{Students' Perception of Example-Based Learning in Software Modeling Education}'' \cite{Tiago.Bonetti-etal:2023} comprovam que o uso de exemplos trabalhados, quando aplicados corretamente, potencializam severamente o engajamento e retenção do conteúdo exposto, porém a maioria desses trabalhos são focados apenas na \gls{es}. 
 
-
 \section{Exemplos trabalhados na Engenharia de Software}
 
 % Exemplos trabalhados para engenharia de software.
@@ -50,8 +49,6 @@ No estado atual da arte, poucos trabalhos são encontrados sobre o uso de exempl
 
 % Possíveis ameaças a viabilidade desta pesquisa.
 % Em desenvolvimento de software, a organização do projeto e controle de versão do código-fonte desempenham um papel crucial, tanto para a evolução do software quanto para a condução de pesquisas científicas que tentam extrair informações a partir deste histórico de alterações. Neste sentido, \textit{git} é atualmente um dos sistemas de controle de versão (do inglês, \gls{vcs}) mais utilizados. Cada conjunto de alterações no código-fonte de um projeto é registrado em tal sistema por meio dos chamados \textit{commits}. No entanto, um dos fatores que podem inviabilizar a pesquisa seria a falta de estrutura e organização das alterações em um projeto. Isso pode ocorrer quando os \textit{commits} não são adequadamente divididos e agregam uma quantidade excessiva de alterações. Muitas vezes as alterações em um \textit{commit} não são coesas, incluindo mudanças em partes não diretamente relacionadas do código do projeto.
-
-O trabalho ``\textit{DistFax - A Toolkit for Measuring Interprocess Communications and Quality of Distributed Systems}''\cite{DistFax}, por outro lado, tem um cunho de análise de métricas em \gls{sds}, porém não com o intuito de criar exemplos trabalhados, mas sim de fornecer uma ferramenta que ajude a analisar determinados aspectos de \gls{sds}. Dessa forma, até o momento, não foram encontradas pesquisas sobre a utilização da evolução de código-fonte de \gls{sds} por meio de métricas estáticas de código para a criação de exemplos trabalhados na disciplina de \gls{es}.
 
 % Definição de exemplo trabalhado.
 Exemplo trabalhado é definido na literatura como um trabalho cognitivo e experimental com o intuito de fornecer uma solução ideal, todavia próxima ao praticável, para um problema específico, no qual uma pessoa com escasso ou nenhum conhecimento acerca do tema possa examinar e aprender com a solução proposta \cite{Robert.Atkinson-etal:2000}. Sendo assim, o desenvolvimento e estudo de exemplos trabalhados enriquecem a qualidade do que é lecionado em sala de aula, uma vez que a solução ideal pode representar muito bem o estado da arte para um determinado tópico, visto que dissemina conceitos e padrões do problema apresentado \cite{Robert.Atkinson-etal:2000}.
@@ -86,7 +83,9 @@ Ainda sobre o mesmo estudo, a análise qualitativa dos resultados teve como obje
 \label{section:related-work}
 
 % Ferramenta para análise de Sistemas Distribuídos.
-O artigo ``\textit{DistFax: A Toolkit for Measuring Interprocess Communications and Quality of Distributed Systems}'' \cite{DistFax} propõe a ferramenta \textit{DistFax} para a análise de métricas de \gls{ipc}, que demonstraram correlação com métricas de qualidade de software. As métricas utilizadas na ferramenta são dinâmicas, as quais requerem o uso de relações \textit{happened-before} que, como já explicado no começo desse capítulo, são um desafio por não haver um relógio global.
+O trabalho ``\textit{DistFax - A Toolkit for Measuring Interprocess Communications and Quality of Distributed Systems}''\cite{DistFax} tem um cunho de análise de métricas em \gls{sds}, porém não com o intuito de criar exemplos trabalhados, mas sim de fornecer uma ferramenta que ajude a analisar determinados aspectos de \gls{sds}. Dessa forma, até o momento, não foram encontradas pesquisas sobre a utilização da evolução de código-fonte de \gls{sds} por meio de métricas estáticas de código para a criação de exemplos trabalhados na disciplina de \gls{es}.
+
+No mesmo contexto, o artigo propõe a ferramenta \textit{DistFax} para a análise de métricas de \gls{ipc}, que demonstraram correlação com métricas de qualidade de software. As métricas utilizadas na ferramenta são dinâmicas, as quais requerem o uso de relações \textit{happened-before} que, como já explicado no começo desse capítulo, são um desafio por não haver um relógio global.
 
 % Ferramenta para análise de Sistemas Distribuídos - Continuação.
 % Conceito de Complexidade Ciclomática.
