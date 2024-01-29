@@ -13,7 +13,7 @@ As questões de pesquisa foram formuladas com base nos objetivos geral e especí
     
     \item Quais são os padrões e tendências observados que correspondem a uma melhoria clara do código em \gls{sds}?
     
-    \item Como as melhorias de código se refletem nas métricas selecionadas e qual é a relação delas com características não funcionais, como desempenho e segurança em \gls{sds}?
+    \item Como as melhorias de código se refletem nas métricas selecionadas e qual é a relação delas com características não funcionais?
     
     \item Quais são as métricas e características mais relevantes para a seleção de exemplos de código apropriados para a criação de exemplos trabalhados na \gls{es}?
 \end{enumerate}
@@ -39,7 +39,7 @@ O artigo ``\textit{A Metrics Suite for Object Oriented Design}'' \cite{MetricsSu
     
     \item \textbf{\gls{lcom}}: Representa o coeficiente de falta de coesão em métodos, mensurando a coesão em uma classe. O valor varia de 0 a 1, onde 0 indica alta coesão e 1 indica falta de coesão. Baixos valores são desejados, indicando que os métodos estão fortemente inter-relacionados, contribuindo para uma classe mais coesa.
 
-    \item \textbf{\gls{noc}}: Indica o número de filhas diretas de uma classe. Um valor alto pode indicar maior reusabilidade, mas também pode aumentar a complexidade, pois a classe pode ter muitas responsabilidades. O equilíbrio é necessário para manter uma estrutura clara e eficiente.
+    \item \textbf{\gls{noc}}: Indica o número de filhas diretas de uma classe. Um valor alto pode indicar maior reusabilidade. Isso implica que a referida classe desempenha uma função importante, dada a dependência de outras classes sobre ela.
 
     \item \textbf{\gls{rfc}}: Refere-se ao número de invocações únicas de um método de uma determinada classe, isto é, conta o número de invocações estáticas, avaliando o nível de comunicação entre classes.
 
@@ -55,7 +55,7 @@ O \gls{ck}\footnote{https://github.com/mauricioaniche/ck} \cite{aniche-ck} é a 
 O \textit{RefactoringMiner}\footnote{https://github.com/tsantalis/RefactoringMiner} \cite{Tsantalis:ICSE:2018:RefactoringMiner} é uma ferramenta no contexto da \gls{es}, especializada em identificar e analisar refatorações de código-fonte. Essa ferramenta fornece uma compreensão aprofundada das mudanças realizadas em um código ao longo do tempo. Com a sua capacidade de reconhecer padrões de refatoração, o \textit{RefactoringMiner} permite que os desenvolvedores analisem como o código foi modificado, de modo a melhorar a qualidade, manutenibilidade e eficiência do software.
 
 % Ferramenta PyDriller.
-A biblioteca \textit{PyDriller}\footnote{https://github.com/ishepard/pydriller}\cite{PyDrillerSpadini2018} é um recurso para análise de repositórios de código-fonte escritos em Python. Sua funcionalidade possibilita aos pesquisadores e desenvolvedores explorar e compreender a evolução do código em projetos Python de uma maneira eficiente. O \textit{PyDriller} oferece recursos para extrair informações, como histórico, autoria e mensagens de \textit{commits}, além de detalhes específicos do estado do código em um determinado momento, contribuindo assim para a pesquisa e prática em \gls{es} no contexto de sistemas complexos e interconectados.
+A biblioteca \textit{PyDriller}\footnote{https://github.com/ishepard/pydriller}\cite{PyDrillerSpadini2018}, disponível para a linguagem de programação Python, é um recurso para análise de repositórios. Sua funcionalidade possibilita aos pesquisadores e desenvolvedores explorar e compreender a evolução do código em projetos Python de uma maneira eficiente. O \textit{PyDriller} oferece recursos para extrair informações, como histórico, autoria e mensagens de \textit{commits}, além de detalhes específicos do estado do código em um determinado momento, contribuindo assim para a pesquisa e prática em \gls{es} no contexto de sistemas complexos e interconectados.
 
 % Repositórios.
 \subsection{Repositórios}\label{sec:repositorios}
@@ -92,7 +92,7 @@ Este trabalho de pesquisa adota uma abordagem exploratória com o propósito de 
 
 A natureza exploratória da pesquisa pretende proporcionar uma visão mais ampla sobre como as métricas de código em projetos de \gls{sds} refletem melhorias significativas. A heurística em desenvolvimento visa identificar casos exemplares de evolução de código, considerando métricas específicas, selecionadas com base nas melhores práticas e no entendimento profundo das características inerentes aos \gls{sds}.
 
-Para alcançar esses objetivos, serão realizadas análises minuciosas de repositórios de código aberto relevantes na área de \gls{sds}, considerando não apenas a evolução do código-fonte, mas também as mudanças nas métricas escolhidas ao longo do tempo. Na vertente de desempenho, serão investigados elementos que possam impactar a eficiência operacional. Na esfera da segurança, será explorada a possibilidade de correlacionar informações com alterações específicas no código, proporcionando uma análise abrangente e multifacetada. Não suficiente, questões como IPC, disponibilidade, transparência e heterogeneidade também serão estudadas. A metodologia adotada permite, assim, uma compreensão holística da relação entre a qualidade do código e as métricas específicas selecionadas.
+Para alcançar esses objetivos, serão realizadas análises minuciosas de repositórios de código aberto relevantes na área de \gls{sds}, considerando não apenas a evolução do código-fonte, mas também as mudanças nas métricas escolhidas ao longo do tempo. Na esfera da segurança, será explorada a possibilidade de correlacionar informações com alterações específicas no código, proporcionando uma análise abrangente e multifacetada. Não suficiente, questões como IPC, disponibilidade, transparência e heterogeneidade também serão estudadas. A metodologia adotada permite, assim, uma compreensão holística da relação entre a qualidade do código e as métricas específicas selecionadas.
 
 Além disso, a pesquisa visa ir além da mera análise quantitativa, incorporando uma abordagem qualitativa ao desenvolver exemplos trabalhados que demonstrem, de forma clara e pedagogicamente eficaz, como a evolução do código em \gls{sds} pode ser interpretada e compreendida no âmbito da \gls{es}. Essa abordagem qualitativa permite a construção de um conhecimento prático e aplicável que possa enriquecer o ensino e a prática profissional na área.
 
@@ -107,7 +107,7 @@ Além disso, a pesquisa visa ir além da mera análise quantitativa, incorporand
     \\\textbf{Resultado esperado:} Lista de repositórios \textit{open-source} ativamente mantidos e utilizados em aplicações reais selecionados para análise.
 
     \item Selecionar métricas de código específicas e relevantes apropriadas para avaliar a evolução de código em \gls{sds}, considerando as melhores práticas da área.
-    \\\textbf{Resultado esperado:} Lista de métricas de código selecionadas, capazes de refletir melhorias, por exemplo, com relações a desempenho.
+    \\\textbf{Resultado esperado:} Lista de métricas de código selecionadas, capazes de refletir melhorias, por exemplo, com relações ao acoplamento e coesão de cada classe.
 
     \item Escrita e publicação de um artigo resumido no evento EduComp2024 sobre o projeto e as metodologias utilizadas até o momento.
     \\\textbf{Resultado esperado:} Resumo publicado apresentando o projeto, metodologias e atividades desenvolvidas de fevereiro até abril no EduComp2024.
