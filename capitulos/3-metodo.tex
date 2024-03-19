@@ -13,7 +13,7 @@ As questões de pesquisa foram formuladas com base nos objetivos geral e especí
     
     \item Quais são os padrões e tendências observados que correspondem a uma melhoria clara do código em \gls{sds}?
     
-    \item Como as melhorias de código se refletem nas métricas selecionadas e qual é a relação delas com características não funcionais?
+    \item Como as melhorias de código se refletem nas métricas selecionadas e qual é a relação delas com características não funcionais como acoplamento, coesão, reusabilidade e manutenibilidade?
     
     \item Quais são as métricas e características mais relevantes para a seleção de exemplos de código apropriados para a criação de exemplos trabalhados na \gls{es}?
 \end{enumerate}
@@ -31,7 +31,7 @@ O artigo ``\textit{A Metrics Suite for Object Oriented Design}''\cite{MetricsSui
 
 % Explicação das Métricas CK.
 \begin{itemize}
-    \item \textbf{\gls{cbo}}: Reflete o grau de acoplamento, ou seja, as dependências que uma classe específica possui, indicando a quantidade de classes diretamente associadas a ela, já que utiliza métodos dessas classes. Um valor elevado sugere maior complexidade e menor flexibilidade, pois mudanças na classe podem impactar várias outras. Não suficiente, demasiado acoplamento diminui o grau de modularidade de uma classe. Observar uma redução no \gls{cbo} ao longo da evolução do código é um indicativo positivo de melhorias na qualidade do código.
+    \item \textbf{\gls{cbo}}: Reflete o grau de acoplamento, ou seja, as dependências que uma classe específica possui, indicando a quantidade de classes diretamente associadas a ela, já que utiliza métodos dessas classes. Um valor elevado sugere maior complexidade e menor flexibilidade, pois mudanças na classe podem impactar várias outras. Não suficiente, demasiado acoplamento diminui o grau de modularidade de uma classe. Observar uma redução no \gls{cbo} ao longo da evolução do código é um indicativo positivo de melhorias na qualidade do código. Um esforço para reduzir o \gls{cbo} pode levar a um \textit{design} de \textit{software} mais modular, onde as mudanças em uma parte do sistema têm menos probabilidade de exigir mudanças em outra.
     
 %    Uma variação da implementação do \gls{cbo}, também denominada \gls{cbom} considera a dependência de classes como uma referência a um objeto do mesmo tipo. Isso significa que, ao adicionar uma simples chamada de método da classe, a métrica é incrementada. 
 
@@ -41,9 +41,9 @@ O artigo ``\textit{A Metrics Suite for Object Oriented Design}''\cite{MetricsSui
 
     \item \textbf{\gls{noc}}: Indica o número de filhas diretas de uma classe. Um valor alto pode indicar maior reusabilidade. Isso implica que a referida classe desempenha uma função importante, dada a dependência de outras classes sobre ela.
 
-    \item \textbf{\gls{rfc}}: Refere-se ao número de invocações únicas de um método de uma determinada classe, isto é, conta o número de invocações estáticas, avaliando o nível de comunicação entre classes.
+    \item \textbf{\gls{rfc}}: Refere-se ao tamanho do conjunto de respostas de uma classe, ou seja, o número de métodos que podem ser potencialmente executados em resposta a uma mensagem recebida por um objeto dessa classe. Um valor menor de \gls{rfc} indica que uma classe tem menos comportamentos e, potencialmente, um menor grau de complexidade. Classes com \gls{rfc} baixo tendem a ser mais coesas e menos acopladas, pois interagem com menos outras classes e componentes, facilitando assim a manutenção e a testabilidade.
 
-    \item \textbf{\gls{wmc}}: Simboliza a soma dos valores de complexidade dos métodos de uma classe específica. Um valor elevado indica que a classe pode ser complexa, com múltiplos métodos, implicando em um custo significativo para o desenvolvimento e manutenção. Além disso, a existência de vários métodos associados a uma classe sugere que ela pode ser menos genérica, sem mencionar o possível impacto nos filhos dessa classe.
+    \item \textbf{\gls{wmc}}: Simboliza a soma dos valores de complexidade dos métodos de uma classe específica. Um valor elevado indica que a classe pode ser complexa, com múltiplos métodos, implicando em um custo significativo para o desenvolvimento e manutenção. Além disso, a existência de vários métodos associados a uma classe sugere que ela pode ser menos genérica, sem mencionar o possível impacto nos filhos dessa classe. Classes com \gls{wmc} baixo tendem a ser mais coesas, o que significa que elas têm um propósito bem definido e limitado. A redução do \gls{wmc} pode ser um sinal de que a classe está se tornando mais focada em suas responsabilidades, o que facilita o entendimento, a manutenção e a extensão do código.
 \end{itemize}
 
 % Ferramentas Utilizadas e o motivo.
